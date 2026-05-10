@@ -1,3 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-deep-space: #050505;
+  --color-surface-glass: rgba(255, 255, 255, 0.03);
+  --color-surface-glass-hover: rgba(255, 255, 255, 0.07);
+  --color-border-glass: rgba(255, 255, 255, 0.1);
+  --color-primary-cyan: #00F2FF;
+  --color-secondary-purple: #8A2BE2;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif; /* Fallback for Geist */
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+  .glass-panel {
+    background-color: var(--color-surface-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--color-border-glass);
+    border-radius: 0;
+  }
+  .glass-panel-hover:hover {
+    background-color: var(--color-surface-glass-hover);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+  }
+  .border-glow-cyan {
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+  }
+}
+
+body {
+  background-color: var(--color-deep-space);
+  color: #e3e2e2;
+  font-family: var(--font-body);
+}
