@@ -40,13 +40,13 @@ function App() {
             
             <div className="mt-12 flex items-center gap-4 glass-panel p-4 inline-flex">
               <img
-                src={`${baseAssetPath}/images/teacher_profile.png`}
+                src={`${baseAssetPath}/images/teacher.png`}
                 alt="Teacher Profile"
                 className="w-12 h-12 rounded-none border border-border-glass object-cover grayscale opacity-80"
               />
               <div>
                 <p className="font-mono text-xs text-secondary-purple uppercase tracking-wider">Instructor_Root</p>
-                <p className="font-display font-semibold text-white">Phra Maha Anavach Purivaro</p>
+                <p className="font-display font-semibold text-white">พระมหาอนวัช ภูริวโร</p>
               </div>
             </div>
           </div>

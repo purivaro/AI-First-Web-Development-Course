@@ -30,64 +30,68 @@
 
 ## 🚀 Session 1 — Build & Deploy Your First Webpage with AI
 
-*สร้างเว็บแรก + Deploy ตั้งแต่วันแรก*
+*สร้างเว็บแรก + วางโครงสร้างมืออาชีพ + Deploy ตั้งแต่วันแรก*
 
 ### 🎯 เป้าหมายคาบนี้
-- ให้นิสิต "มีเว็บออนไลน์ของตัวเอง" ภายในคาบแรก
-- สร้างความมั่นใจว่า AI สามารถช่วยสร้างเว็บได้จริง
-- เข้าใจภาพรวมของเว็บแบบไม่ลงลึก
+- ให้นิสิตเข้าใจกระบวนการทำงานแบบ AI-First Architect
+- สามารถร่าง Requirement และวางแบบแปลนผ่านไฟล์ `.md` ได้
+- รู้จักใช้เครื่องมือออกแบบระดับโปร (Google Stitch) เชื่อมต่อผ่านระบบ MCP
+- เข้าใจการจัดการเวอร์ชัน (Git/GitHub) และรู้วิธีสั่ง AI ให้ทำงานแทน
+- เอาเว็บขึ้นออนไลน์ได้จริงผ่าน GitHub Pages ภายในคาบแรก
 
 ### 📖 เนื้อหา
-- เว็บทำงานอย่างไร (HTML/CSS/JS แบบภาพรวม 15 นาที)
-- **Markdown คืออะไร และทำไมสำคัญกับ AI**
-  - AI อ่านและเขียน Markdown ตลอดเวลา
-  - การเขียน Prompt แบบ Markdown ช่วยให้ AI เข้าใจได้ชัดขึ้น
-  - ไฟล์ `.md` ใช้เป็น context / instruction ให้ AI ได้
-- วิธีสั่ง AI ให้สร้าง Landing Page
-- การแก้ไขข้อความ/รูปภาพ/สี ด้วยการสั่ง AI
-- Deploy ขึ้นออนไลน์ผ่าน **GitHub Pages** (เพื่อให้แก้โค้ดอัปเดตง่ายในอนาคต)
-- ให้ AI อธิบายโครงสร้างเว็บที่มันสร้าง
-- 🎬 **Demo (ดูอย่างเดียว):** การใช้ AI ใน Editor ช่วย Commit และ Push ขึ้น GitHub อัตโนมัติ
+- **วิถี AI-First Web Architect:**
+  - ทำไมต้องใช้ Markdown (`.md`) ในการเป็น Single Source of Truth
+  - การเขียน Prompt ให้ AI เข้าใจด้วยโครงสร้าง Markdown
+- **การเนรมิต UI ด้วย Google Stitch:**
+  - รู้จัก Google Stitch และระบบ Design Tokens
+  - การเชื่อมต่อ MCP (Model Context Protocol) เพื่อดึงดีไซน์จาก Stitch มาเขียนโค้ดอัตโนมัติ
+- **Version Control สำหรับผู้กำกับ AI:**
+  - รู้จัก Git และ GitHub ฉบับรวบรัด
+  - ศิลปะการใช้ AI พิมพ์คำสั่ง `git add .`, `git commit`, `git push` ให้แบบอัตโนมัติ
+- **เอาขึ้นออนไลน์ (Deployment):**
+  - วิธี Setup GitHub Pages อย่างถูกวิธี
+  - การอัปเดตเว็บเวอร์ชันใหม่ด้วยคำสั่งเดียวผ่าน AI
 
 ### 🛠️ Workshop
-- เขียน Markdown เบื้องต้น (หัวข้อ, ลิสต์, code block)
-- ใช้ Markdown เป็น Prompt สั่ง AI สร้าง Landing Page
-- ปรับแต่งด้วย AI (แก้ไข Requirement ก่อนเสมอ)
-- Deploy ด้วย GitHub Pages และแชร์ลิงก์
+- เขียนไฟล์ `requirements.md` เพื่อใช้เป็นแปลนบ้าน
+- ดึงดีไซน์จาก Google Stitch ผ่านระบบ MCP
+- ให้ AI สร้างเว็บ (เช่น HTML/CSS/JS หรือ React) ให้ตรงตาม Requirement และ Design
+- สั่ง AI จัดการ Git (Commit & Push) ขึ้น GitHub รวดเดียวจบ
+- ตั้งค่า GitHub Pages และนำลิงก์มาแชร์ให้เพื่อนดู
 
 ### ✅ Learning Outcomes
-- มีเว็บออนไลน์ของตัวเอง
-- รู้วิธีสั่ง AI ให้สร้างหน้าเว็บ
-- เข้าใจว่า Markdown ช่วยให้คุย AI ได้มีประสิทธิภาพขึ้น
-- เข้าใจภาพรวมเว็บแบบไม่เครียด
+- มีเว็บไซต์ออนไลน์ที่เป็นผลงานของตัวเอง
+- รู้วิธีการคุม AI ผ่านไฟล์ `.md` และดึงข้อมูลการออกแบบด้วย MCP
+- ใช้งาน Git และ GitHub Pages ได้จริงโดยไม่ต้องท่องจำคำสั่ง
 
 ---
 
 ## 🎨 Session 2 — Mastering Web Layout by Working with AI
 
-*เข้าใจโครงสร้างเว็บ + ใช้ AI ออกแบบ layout*
+*เข้าใจโครงสร้างเว็บ + ใช้ AI ปรับแต่งหน้าเว็บขั้นสูง*
 
 ### 🎯 เป้าหมายคาบนี้
 - เข้าใจ layout ของเว็บแบบมืออาชีพ
-- ใช้ AI ช่วยออกแบบและปรับ layout
-- เข้าใจ HTML/CSS เท่าที่จำเป็นต่อการสั่ง AI
+- ใช้ AI ช่วยสร้าง Component ย่อยๆ และการจัดวาง
+- เข้าใจ HTML/CSS เท่าที่จำเป็นต่อการสั่ง AI ให้ปรับแก้งาน
 
 ### 📖 เนื้อหา
 - โครงสร้างเว็บ: section, container, grid, spacing
-- HTML/CSS ที่จำเป็นจริง ๆ
-- การใช้ Google Stitch เพื่อสร้างและปรับแต่ง UI Design ด้วย AI
+- HTML/CSS ที่จำเป็นจริง ๆ สำหรับการตรวจงาน AI
+- การต่อยอด UI Components โดยอ้างอิงจาก Design System ในตอนแรก
 - ให้ AI อธิบาย HTML/CSS (กล่อง, ระยะห่าง, สี)
-- ให้ AI ปรับ layout ให้สวยขึ้น
+- ให้ AI ปรับ layout ให้สวยขึ้นและรองรับมือถือ (Responsive)
 
 ### 🛠️ Workshop
-- ให้ AI redesign หน้าเว็บของนิสิต
-- ปรับ spacing, color, typography
-- ทำ responsive layout ด้วย AI
+- ให้ AI แตก Component ย่อยๆ จากหน้าเว็บหลัก
+- ปรับ spacing, color, typography ลงลึกในแต่ละส่วน
+- ทำ responsive layout ด้วย AI สำหรับจอมือถือและแท็บเล็ต
 
 ### ✅ Learning Outcomes
-- อ่าน HTML/CSS ออก
-- สั่ง AI ให้ปรับ layout ได้
-- ใช้เครื่องมือออกแบบ AI ได้
+- อ่าน HTML/CSS ออกและเข้าใจ Box Model
+- สั่ง AI ให้ปรับ layout รายจุดได้อย่างแม่นยำ
+- สร้างเว็บที่รองรับทุกขนาดหน้าจอได้
 
 ---
 
