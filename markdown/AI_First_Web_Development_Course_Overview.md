@@ -20,10 +20,10 @@
 ## 📚 สรุป 6 คาบเรียน
 
 1. **Build & Deploy Your First Webpage with AI**
-2. **Mastering Web Layout by Working with AI**
-3. **Interactive JavaScript & AI-Assisted Debugging**
-4. **Building AI-Generated Web Apps with Real Logic**
-5. **AI-Driven API Integration & Dynamic Data**
+2. **UI Design & Basic Interactivity**
+3. **State Management & Web Apps**
+4. **Databases & Persistent Data**
+5. **External APIs & Intro to RAG**
 6. **Final Project: AI-Powered Web/App Development**
 
 ---
@@ -67,124 +67,114 @@
 
 ---
 
-## 🎨 Session 2 — Mastering Web Layout by Working with AI
+## 🎨 Session 2 — UI Design & Basic Interactivity
 
-*เข้าใจโครงสร้างเว็บ + ใช้ AI ปรับแต่งหน้าเว็บขั้นสูง*
+*เข้าใจโครงสร้างเว็บ + ใส่ลูกเล่นให้ขยับได้*
 
 ### 🎯 เป้าหมายคาบนี้
 - เข้าใจ layout ของเว็บแบบมืออาชีพ
-- ใช้ AI ช่วยสร้าง Component ย่อยๆ และการจัดวาง
-- เข้าใจ HTML/CSS เท่าที่จำเป็นต่อการสั่ง AI ให้ปรับแก้งาน
+- ใช้ AI ช่วยสร้าง Component และใส่ JavaScript พื้นฐาน
+- เข้าใจ DOM Event ง่ายๆ เช่น การคลิกเพื่อเปิด/ปิด หรือเปลี่ยนสี
 
 ### 📖 เนื้อหา
 - โครงสร้างเว็บ: section, container, grid, spacing
-- HTML/CSS ที่จำเป็นจริง ๆ สำหรับการตรวจงาน AI
-- การต่อยอด UI Components โดยอ้างอิงจาก Design System ในตอนแรก
-- ให้ AI อธิบาย HTML/CSS (กล่อง, ระยะห่าง, สี)
-- ให้ AI ปรับ layout ให้สวยขึ้นและรองรับมือถือ (Responsive)
+- การต่อยอด UI Components โดยอ้างอิงจาก Design System ด้วย Stitch
+- DOM & Event Listener คืออะไร (แบบง่ายที่สุด)
+- ให้ AI อธิบาย HTML/CSS/JS และปรับ layout ให้สวยขึ้นพร้อมลูกเล่น (Interactive)
 
 ### 🛠️ Workshop
-- ให้ AI แตก Component ย่อยๆ จากหน้าเว็บหลัก
-- ปรับ spacing, color, typography ลงลึกในแต่ละส่วน
+- สร้าง UI Component สวยๆ จากหน้าเว็บหลัก
+- เพิ่มปุ่มคลิกเพื่อเปิด Popup Modal หรือ Theme Switcher (Dark/Light mode)
 - ทำ responsive layout ด้วย AI สำหรับจอมือถือและแท็บเล็ต
 
 ### ✅ Learning Outcomes
-- อ่าน HTML/CSS ออกและเข้าใจ Box Model
-- สั่ง AI ให้ปรับ layout รายจุดได้อย่างแม่นยำ
-- สร้างเว็บที่รองรับทุกขนาดหน้าจอได้
+- อ่าน HTML/CSS/JS พื้นฐานออก
+- สั่ง AI ให้ปรับ layout และเขียนโค้ด Interactive ง่ายๆ ได้
+- สร้างเว็บที่รองรับทุกขนาดหน้าจอและโต้ตอบได้
 
 ---
 
-## ⚡ Session 3 — Interactive JavaScript & AI-Assisted Debugging
+## ⚡ Session 3 — State Management & Web Apps
 
-*ทำเว็บให้ขยับได้ + Debug แบบง่ายด้วย AI*
+*จากเว็บหน้าเดียว สู่แอปพลิเคชันที่มีตรรกะจริง*
 
 ### 🎯 เป้าหมายคาบนี้
-- เข้าใจ JavaScript แบบไม่ยาก
-- ทำเว็บ interactive ได้
-- ใช้ AI ช่วย debug
+- ก้าวจากการทำเว็บหน้าเดียว มาทำ "Web App"
+- เข้าใจ "State" และตรรกะการทำงาน (Logic) เบื้องต้น
+- ใช้ AI ช่วยเขียนโค้ดและ Debug แอปพลิเคชัน
 
 ### 📖 เนื้อหา
-- DOM คืออะไร (แบบง่าย)
-- Event Listener
-- การเปลี่ยนข้อความ/สี/คลาส
-- Debugging ด้วย DevTools
-- ให้ AI อธิบาย error และแก้บั๊ก
+- State คืออะไร? (ข้อมูลเปลี่ยน UI ก็เปลี่ยนตาม)
+- ให้ AI สร้าง Web App ที่มีตรรกะซับซ้อนขึ้น เช่น
+  - Calculator (เครื่องคิดเลข)
+  - To-Do App (ที่ยังไม่ต่อ DB)
+- การใช้ DevTools ร่วมกับ AI ในการหา Bug (AI-Assisted Debugging)
 
 ### 🛠️ Workshop
-- Counter App
-- Theme Switcher
-- Popup Modal
-- Debug โค้ดที่มีบั๊กง่าย ๆ
+- เลือกทำ 1 เว็บแอพ
+- ปรับฟีเจอร์ด้วยการสั่ง AI
+- ลองแก้ Bug ที่ซ่อนอยู่ด้วยการส่ง Error Message ให้ AI ช่วยวิเคราะห์
 
 ### ✅ Learning Outcomes
-- ทำเว็บ interactive ได้
-- เข้าใจ JS พอที่จะสั่ง AI
-- Debug ด้วย AI ได้
+- เข้าใจ State และ Logic ของ Web App
+- ใช้ AI สร้างแอปและเพิ่มฟีเจอร์ได้
+- Debug และแก้ปัญหาโค้ดด้วย AI ได้
 
 ---
 
-## 🧠 Session 4 — Building AI-Generated Web Apps with Real Logic & Databases
+## 🧠 Session 4 — Databases & Persistent Data
 
-*จากหน้าเว็บ → เว็บแอพที่มีตรรกะจริง และการบันทึกข้อมูลลงฐานข้อมูล*
+*เก็บบันทึกข้อมูลไม่ให้หายไปไหน*
 
 ### 🎯 เป้าหมายคาบนี้
-- เข้าใจ "logic" ของเว็บแอพ
-- รู้จักและประยุกต์ใช้ Database เบื้องต้นด้วย AI
-- ใช้ AI สร้างเว็บแอพที่บันทึกข้อมูลได้จริง
-- ปรับฟีเจอร์ด้วยการสั่ง AI
+- เข้าใจการทำงานของ Database เบื้องต้น
+- ใช้ AI นำ Web App จากคาบที่แล้วมาเชื่อมต่อ Database
+- ปรับฟีเจอร์แอปให้สมบูรณ์และใช้งานได้จริง (Persistent Data)
 
 ### 📖 เนื้อหา
-- State คืออะไร และการอัปเดต UI ตามข้อมูล
+- ทำไมต้องมี Database? (ปัญหาข้อมูลหายเวลารีเฟรช)
 - พื้นฐาน Database ที่ AI ช่วยจัดการได้ง่ายๆ:
   - ทางเลือกแบบง่าย: Google Sheets, Firebase
   - ทางเลือกสาย Relational: SQLite, MySQL, PostgreSQL
   - ทางเลือกแบบ Cloud Native: Cloudflare D1
-- ให้ AI สร้าง Web App เช่น
-  - To-Do App (บันทึกข้อมูลไม่ให้หายไปเมื่อรีเฟรช)
-  - Notes App
-- ให้ AI refactor โค้ดให้สั้นลง
+- วิธีสั่ง AI ให้เขียนโค้ดต่อเชื่อมฐานข้อมูล (CRUD: Create, Read, Update, Delete)
 
 ### 🛠️ Workshop
-- เลือกทำ 1 เว็บแอพ
-- เชื่อมต่อฐานข้อมูล (Database) ตามทางเลือกที่เหมาะสมด้วยความช่วยเหลือจาก AI
-- ปรับฟีเจอร์ด้วย AI และเพิ่ม UI/UX ให้สวยงาม
+- นำ Web App จาก Session 3 มาเชื่อมต่อ Database (เช่น To-Do List ที่จำข้อมูลได้)
+- ลองเพิ่ม ลบ และดึงข้อมูลจริงจากระบบฐานข้อมูลด้วยความช่วยเหลือจาก AI
 
 ### ✅ Learning Outcomes
-- เข้าใจ logic ของเว็บแอพและการทำงานของ Database เบื้องต้น
-- ใช้ AI สร้างแอพที่บันทึกข้อมูลได้อย่างสมบูรณ์
-- ปรับฟีเจอร์และแก้ปัญหาเรื่องข้อมูลได้ด้วยการสั่ง AI
+- เข้าใจการทำงานและบทบาทของ Database
+- สั่ง AI เขียนโค้ดเชื่อมต่อระบบหลังบ้านได้
+- มี Web App ที่เก็บข้อมูลได้อย่างถาวร
 
 ---
 
-## 🌐 Session 5 — AI-Driven API Integration & Intro to RAG
+## 🌐 Session 5 — External APIs & Intro to RAG
 
-*ดึงข้อมูลจริงจาก API และสร้าง AI Assistant ของตัวเองด้วย RAG*
+*ดึงข้อมูลระดับโลก และสร้าง AI Assistant ของตัวเอง*
 
 ### 🎯 เป้าหมายคาบนี้
-- เข้าใจการดึงข้อมูลจาก API
+- เข้าใจการดึงข้อมูลจาก API ภายนอก
 - รู้จัก RAG (Retrieval-Augmented Generation) เบื้องต้น
-- ใช้ AI สร้างแอพที่เชื่อมต่อกับ LLM API และข้อมูลของเราเอง
-- Debug API ด้วย AI
+- ใช้ AI สร้างแอพที่เชื่อมต่อกับ LLM API และข้อมูลส่วนตัว
 
 ### 📖 เนื้อหา
-- API คืออะไร (แบบง่ายที่สุด) และโครงสร้าง JSON
-- Intro to RAG: ทำอย่างไรให้ AI ตอบคำถามจากข้อมูลที่เรามี (เช่น ไฟล์ PDF หรือฐานข้อมูลความรู้)
+- API คืออะไร และโครงสร้าง JSON แบบง่ายๆ
+- Intro to RAG: ทำอย่างไรให้ AI ตอบคำถามจากข้อมูลที่เรามี (เช่น ไฟล์ PDF หรือคู่มือ)
 - ให้ AI สร้าง Web App เช่น
-  - Weather App / Image Search
+  - Weather App (ดึง API สภาพอากาศ)
   - Custom AI Chatbot แบบมี RAG เบื้องต้น
-- Debug API & AI Prompt ด้วย AI
 
 ### 🛠️ Workshop
-- เลือกทำ 1 API App หรือ Chatbot เล็กๆ
-- ลองสร้างระบบ RAG อย่างง่ายเพื่อดึงข้อมูลมาตอบ
-- ให้ AI ปรับ UI/UX
-- ให้ AI อธิบาย error message
+- เลือกสร้าง 1 API App หรือ AI Chatbot เล็กๆ
+- ลองดึงข้อมูลจาก API สาธารณะ หรือสร้างระบบ RAG อย่างง่ายเพื่อตอบคำถาม
+- ให้ AI ช่วยจัดการปรับ UI/UX ให้ดูโปร
 
 ### ✅ Learning Outcomes
-- เข้าใจ API และ RAG (Retrieval-Augmented Generation)
-- ใช้ AI เขียน API integration และเชื่อมต่อ LLM ได้
-- Debug API ได้ด้วย AI
+- เข้าใจหลักการ API และ RAG เบื้องต้น
+- ใช้ AI เขียนโค้ดดึงข้อมูลภายนอก (Fetch) ได้
+- เข้าใจกระบวนการนำ LLM มาใช้งานจริงใน Web App
 
 ---
 

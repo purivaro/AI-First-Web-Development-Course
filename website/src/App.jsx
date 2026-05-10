@@ -145,23 +145,22 @@ function App() {
           <section className="glass-panel glass-panel-hover transition-all duration-300">
             <div className="grid md:grid-cols-12 h-full">
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center order-2 md:order-1 border-r border-border-glass">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">Mastering Web Layout with AI</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">UI Design & Basic Interactivity</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  "นักออกแบบไม่ใช่คนที่วาดรูปเก่ง แต่คือคนที่จัดวางองค์ประกอบเป็น" เรียนรู้โครงสร้าง
-                  Box Model และใช้ <strong className="text-primary-cyan font-normal">Google Stitch</strong> เป็นพระเอกในการเนรมิต UI ให้สวยงามระดับมืออาชีพ
+                  เรียนรู้โครงสร้างเว็บ และใช้ <strong className="text-primary-cyan font-normal">Google Stitch</strong> เนรมิต UI ให้สวยงามระดับมืออาชีพ พร้อมใส่ลูกเล่นให้หน้าเว็บตอบสนองต่อผู้ใช้งาน
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">เข้าใจโครงสร้าง Box Model, Margin, Padding, Container</p>
+                    <p className="text-[#e3e2e2]">ต่อยอด UI Components โดยอ้างอิงจาก Design System ด้วย Stitch</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ใช้ <span className="text-primary-cyan">Google Stitch</span> ขึ้นโครง UI และปรับ Theme แบบ Visual</p>
+                    <p className="text-[#e3e2e2]">เข้าใจ DOM & Event Listener เบื้องต้น เพื่อการคลิกโต้ตอบ</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">นำโค้ดที่ได้มาปรับปรุงใน Editor และจัดหน้าจอแบบ Responsive</p>
+                    <p className="text-[#e3e2e2]">ให้ AI เขียนโค้ดเปิดปิด Modal หรือทำ Theme Switcher (Dark Mode)</p>
                   </div>
                 </div>
               </div>
@@ -192,22 +191,22 @@ function App() {
                 />
               </div>
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">Interactive JavaScript & AI-Assisted Debugging</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">State Management & Web Apps</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  ทำเว็บให้ขยับได้ + Debug แบบง่ายด้วย AI เรียนรู้วิธีการทำให้หน้าเว็บตอบสนองกับผู้ใช้ และการใช้ AI ในการหาบั๊กและแก้ปัญหา
+                  จากเว็บหน้าเดียว สู่การสร้างแอปพลิเคชันที่มีตรรกะจริง เข้าใจคอนเซปต์ของ "State" ข้อมูลเปลี่ยน หน้าจอเปลี่ยน และเทคนิค AI-Assisted Debugging
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">เข้าใจ DOM และ Event Listener เพื่อสร้างการโต้ตอบ</p>
+                    <p className="text-[#e3e2e2]">เข้าใจความหมายของ State และการควบคุม Logic ของเว็บแอป</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ปรับเปลี่ยนข้อความ สี และองค์ประกอบต่างๆ แบบไดนามิก</p>
+                    <p className="text-[#e3e2e2]">สร้าง Web App เบื้องต้น เช่น เครื่องคิดเลข หรือ To-Do List</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ใช้ AI เป็นผู้ช่วยในการวิเคราะห์ Error และ Debug โค้ด</p>
+                    <p className="text-[#e3e2e2]">ใช้ DevTools ร่วมกับ AI ในการหาและแก้บั๊กอย่างมีประสิทธิภาพ</p>
                   </div>
                 </div>
               </div>
@@ -218,22 +217,22 @@ function App() {
           <section className="glass-panel glass-panel-hover transition-all duration-300">
             <div className="grid md:grid-cols-12 h-full">
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center order-2 md:order-1 border-r border-border-glass">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">Web Apps with Real Logic & Databases</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">Databases & Persistent Data</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  จากหน้าเว็บธรรมดาก้าวสู่การทำงานจริง เข้าใจการจัดการ State และเรียนรู้การเชื่อมต่อ <strong>Database</strong> ง่ายๆ ด้วย AI (เช่น Google Sheets, SQLite, Firebase, Cloudflare D1 หรือ MySQL/PostgreSQL) ให้ข้อมูลไม่หายเมื่อรีเฟรชหน้าเว็บ
+                  แก้ปัญหา "ข้อมูลหายเวลารีเฟรช" เรียนรู้การเชื่อมต่อแอปพลิเคชันกับ <strong>Database</strong> หลากรูปแบบด้วย AI ตั้งแต่ Google Sheets, Firebase ไปจนถึงระบบ Cloud Native อย่าง Cloudflare D1
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ทำความเข้าใจ State และการอัปเดต UI ให้ตอบสนองตามข้อมูลจริง</p>
+                    <p className="text-[#e3e2e2]">เข้าใจสถาปัตยกรรมการเก็บข้อมูลเบื้องต้นและประโยชน์ของฐานข้อมูล</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ใช้ AI เชื่อมต่อฐานข้อมูลหลากรูปแบบเพื่อบันทึกข้อมูลอย่างถาวร</p>
+                    <p className="text-[#e3e2e2]">สั่ง AI ให้สร้างโครงสร้างต่อเชื่อมฐานข้อมูลแบบ CRUD ครบวงจร</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">สั่ง AI ให้สร้าง Web App เต็มรูปแบบ เช่น To-Do, Notes หรือ Dashboard</p>
+                    <p className="text-[#e3e2e2]">เปลี่ยน Web App เป็นแอปพลิเคชันใช้งานจริงที่สามารถบันทึกและอ่านข้อมูลได้</p>
                   </div>
                 </div>
               </div>
@@ -264,22 +263,22 @@ function App() {
                 />
               </div>
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">API Integration & Intro to RAG</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">External APIs & Intro to RAG</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  ดึงข้อมูลผ่าน API และทำความรู้จักกับ <strong>RAG (Retrieval-Augmented Generation)</strong> เพื่อสร้าง AI Chatbot ที่สามารถตอบคำถามจากฐานข้อมูลหรือเอกสารของเราเองได้
+                  เชื่อมต่อโลกภายนอกผ่าน API และก้าวสู่อนาคตด้วย <strong>RAG (Retrieval-Augmented Generation)</strong> เพื่อสร้าง Custom AI Chatbot ของตัวเอง
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ปูพื้นฐาน API และ JSON แบบเข้าใจง่าย ไม่ต้องเขียนระบบหลังบ้านเอง</p>
+                    <p className="text-[#e3e2e2]">ปูพื้นฐาน API และ JSON แบบเข้าใจง่าย ดึงข้อมูลระดับโลกมาไว้ที่เว็บเรา</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">เรียนรู้แนวคิด RAG เบื้องต้น ทำให้ AI ฉลาดขึ้นด้วยข้อมูลของเรา</p>
+                    <p className="text-[#e3e2e2]">เรียนรู้แนวคิด RAG เบื้องต้น ทำให้ AI ตอบคำถามได้ตรงจุดจากเอกสารส่วนตัว</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">สร้าง Web App เชื่อมต่อ LLM API หรือดึงข้อมูลแบบไดนามิก</p>
+                    <p className="text-[#e3e2e2]">สร้างผลงาน AI Assistant ที่ทำงานอยู่บนหน้าเว็บของเราเอง</p>
                   </div>
                 </div>
               </div>
@@ -326,8 +325,16 @@ function App() {
 
       {/* Footer */}
       <footer className="relative border-t border-border-glass bg-deep-space py-12 text-center z-10">
-        <div className="flex justify-center mb-6 opacity-30 hover:opacity-100 transition-opacity">
-          <img src={`${baseAssetPath}/images/teacher.png`} alt="Teacher" className="h-12 w-auto" />
+        <div className="flex flex-col items-center justify-center mb-8 opacity-40 hover:opacity-100 transition-opacity">
+          <img 
+            src={`${baseAssetPath}/images/teacher.png`} 
+            alt="Teacher" 
+            className="h-12 w-12 rounded-md object-cover border border-border-glass mb-3 cursor-pointer" 
+            onClick={() => setIsTeacherModalOpen(true)} 
+          />
+          <a href="https://purivaro.com" target="_blank" rel="noreferrer" className="font-mono text-xs text-primary-cyan hover:text-white tracking-widest uppercase transition-colors">
+            purivaro.com
+          </a>
         </div>
         <p className="font-mono text-xs text-[#b9cacb] tracking-widest uppercase">© 2026 AI-First Web Architecture.</p>
         <p className="font-mono text-xs text-[#474646] tracking-widest uppercase mt-4">System powered by React + Tailwind CSS + Google Stitch.</p>
