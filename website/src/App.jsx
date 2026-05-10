@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
+  const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
   const baseAssetPath = '/AI-First-Web-Development-Course/assets';
 
   return (
@@ -43,7 +44,8 @@ function App() {
                 <img
                   src={`${baseAssetPath}/images/teacher.png`}
                   alt="Teacher Profile"
-                  className="w-20 h-20 rounded-md border border-border-glass object-cover"
+                  onClick={() => setIsTeacherModalOpen(true)}
+                  className="w-20 h-20 rounded-md border border-border-glass object-cover cursor-pointer hover:border-primary-cyan hover:shadow-[0_0_15px_rgba(0,242,255,0.4)] transition-all duration-300"
                 />
                 <div>
                   <div className="flex items-baseline gap-2 mb-1">
@@ -330,6 +332,68 @@ function App() {
         <p className="font-mono text-xs text-[#b9cacb] tracking-widest uppercase">© 2026 AI-First Web Architecture.</p>
         <p className="font-mono text-xs text-[#474646] tracking-widest uppercase mt-4">System powered by React + Tailwind CSS + Google Stitch.</p>
       </footer>
+
+      {/* Teacher Profile Modal */}
+      {isTeacherModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
+          <div className="absolute inset-0" onClick={() => setIsTeacherModalOpen(false)}></div>
+          <div className="relative glass-panel border border-primary-cyan/40 max-w-2xl w-full p-8 shadow-[0_0_50px_rgba(0,242,255,0.15)] transform scale-100 transition-transform">
+            <button 
+              onClick={() => setIsTeacherModalOpen(false)}
+              className="absolute top-4 right-4 text-[#b9cacb] hover:text-primary-cyan transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+              <div className="shrink-0 relative group">
+                <div className="absolute inset-0 bg-primary-cyan/20 blur-xl rounded-full group-hover:bg-primary-cyan/40 transition-colors duration-500"></div>
+                <img
+                  src={`${baseAssetPath}/images/teacher.png`}
+                  alt="Teacher Profile"
+                  className="relative w-40 h-40 md:w-56 md:h-56 rounded-full border-2 border-primary-cyan object-cover shadow-[0_0_25px_rgba(0,242,255,0.3)]"
+                />
+              </div>
+
+              <div className="flex-1 text-center md:text-left">
+                <div className="inline-flex items-center justify-center md:justify-start gap-2 mb-2 w-full">
+                  <span className="w-2 h-2 rounded-full bg-secondary-purple animate-pulse"></span>
+                  <p className="font-mono text-xs text-secondary-purple uppercase tracking-wider">Instructor_Profile // Authorized</p>
+                </div>
+                
+                <h2 className="font-display font-bold text-white text-3xl md:text-4xl mb-1">พระมหาอนวัช ภูริวโร</h2>
+                <p className="text-xl text-[#b9cacb] mb-4">หลวงพี่ภูริ</p>
+                
+                <div className="w-12 h-1 bg-gradient-to-r from-primary-cyan to-secondary-purple mx-auto md:mx-0 mb-6"></div>
+
+                <div className="space-y-4 text-left">
+                  <div>
+                    <h4 className="text-xs font-mono text-primary-cyan uppercase tracking-wider mb-1">Position</h4>
+                    <p className="text-[#e3e2e2]">หัวหน้าศูนย์พัฒนาเทคโนโลยีเพื่อศีลธรรม</p>
+                    <p className="text-sm text-[#b9cacb] mt-0.5">Head of the Center of Technological Development for Morality</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-xs font-mono text-primary-cyan uppercase tracking-wider mb-1">Organization</h4>
+                    <p className="text-[#e3e2e2]">สถาบันพัฒนาเยาวชนโลก Gydi</p>
+                  </div>
+
+                  <div className="pt-4 border-t border-border-glass grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="text-xs font-mono text-secondary-purple uppercase tracking-wider mb-1">Website</h4>
+                      <a href="https://purivaro.com" target="_blank" rel="noreferrer" className="text-primary-cyan hover:text-white transition-colors break-all">purivaro.com</a>
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-mono text-secondary-purple uppercase tracking-wider mb-1">Email</h4>
+                      <a href="mailto:aun.puri@gmail.com" className="text-primary-cyan hover:text-white transition-colors break-all">aun.puri@gmail.com</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
