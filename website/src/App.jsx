@@ -83,7 +83,7 @@ function App() {
                 <div className="w-2 h-2 rounded-full bg-green-500/50"></div>
               </div>
               <img
-                src={`${baseAssetPath}/course_hero.png`}
+                src={`${baseAssetPath}/hero.png`}
                 alt="Course Hero"
                 className="w-full object-cover aspect-[4/3] mt-8 grayscale-[20%] contrast-125"
               />
@@ -316,7 +316,7 @@ function App() {
                     MODULE_06
                  </div>
                 <img
-                  src={`${baseAssetPath}/session6_banner.png`}
+                  src={`${baseAssetPath}/session6_banner2.png`}
                   alt="Session 6"
                   className="w-full h-full object-cover min-h-[300px] grayscale-[30%] contrast-125"
                 />
