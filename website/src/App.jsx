@@ -216,22 +216,22 @@ function App() {
           <section className="glass-panel glass-panel-hover transition-all duration-300">
             <div className="grid md:grid-cols-12 h-full">
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center order-2 md:order-1 border-r border-border-glass">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">Building AI-Generated Web Apps with Real Logic</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">Web Apps with Real Logic & Databases</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  จากหน้าเว็บธรรมดา ก้าวสู่เว็บแอปพลิเคชันที่มีตรรกะจริง เข้าใจการจัดการ State และปล่อยให้ AI จัดการโครงสร้างโค้ดที่ซับซ้อน
+                  จากหน้าเว็บธรรมดาก้าวสู่การทำงานจริง เข้าใจการจัดการ State และเรียนรู้การเชื่อมต่อ <strong>Database</strong> ง่ายๆ ด้วย AI (เช่น Google Sheets, SQLite, Firebase, Cloudflare D1 หรือ MySQL/PostgreSQL) ให้ข้อมูลไม่หายเมื่อรีเฟรชหน้าเว็บ
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ทำความเข้าใจ State และการอัปเดต UI ตามข้อมูล</p>
+                    <p className="text-[#e3e2e2]">ทำความเข้าใจ State และการอัปเดต UI ให้ตอบสนองตามข้อมูลจริง</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">สั่ง AI ให้สร้าง Web App เต็มรูปแบบ เช่น To-Do, Notes หรือ Calculator</p>
+                    <p className="text-[#e3e2e2]">ใช้ AI เชื่อมต่อฐานข้อมูลหลากรูปแบบเพื่อบันทึกข้อมูลอย่างถาวร</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">เทคนิคการให้ AI ช่วย Refactor โค้ดให้สั้นและอ่านง่ายขึ้น</p>
+                    <p className="text-[#e3e2e2]">สั่ง AI ให้สร้าง Web App เต็มรูปแบบ เช่น To-Do, Notes หรือ Dashboard</p>
                   </div>
                 </div>
               </div>
