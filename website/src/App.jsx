@@ -118,23 +118,23 @@ function App() {
                 />
               </div>
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">Build & Deploy Your First Webpage</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">Build & Deploy Your First Webpage with AI</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  สร้างเว็บไซต์แรกและนำขึ้นออนไลน์ตั้งแต่วันแรก! เรียนรู้วิวัฒนาการจากการพิมพ์ Prompt ธรรมดา
-                  มาสู่เทคนิค <strong className="text-primary-cyan font-normal">Context Engineering</strong> และ <strong className="text-primary-cyan font-normal">Spec-Driven Development</strong>
+                  สร้างเว็บแรก + Deploy ขึ้นออนไลน์ในคาบเดียว! เริ่มจาก mindset สำคัญที่สุด —
+                  <strong className="text-primary-cyan font-normal"> ใช้ AI แบบ Agent ไม่ใช่ Chatbot</strong> ฝึกตั้งคำถามกลับและ brief งานแบบมืออาชีพ
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ใช้ ChatGPT/Gemini สร้างคอนเทนต์และตอบกลับเป็น Markdown</p>
+                    <p className="text-[#e3e2e2]">เปลี่ยน mindset: <span className="text-primary-cyan">Agent vs Chatbot</span> และศิลปะการตั้งคำถามกลับ</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ใช้ Antigravity สร้าง <span className="text-primary-cyan">requirements.md</span> (Single Source of Truth)</p>
+                    <p className="text-[#e3e2e2]">เขียน <span className="text-primary-cyan">requirements.md</span> เป็น Single Source of Truth</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ใช้คำสั่ง Git CLI นำเว็บขึ้น GitHub Pages</p>
+                    <p className="text-[#e3e2e2]">ดึงดีไซน์ Google Stitch ผ่าน MCP + Deploy ขึ้น GitHub Pages</p>
                   </div>
                 </div>
               </div>
@@ -145,22 +145,23 @@ function App() {
           <section className="glass-panel glass-panel-hover transition-all duration-300">
             <div className="grid md:grid-cols-12 h-full">
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center order-2 md:order-1 border-r border-border-glass">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">UI Design & Basic Interactivity</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">Designing & Debugging Interactive UI with AI</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  เรียนรู้โครงสร้างเว็บ และใช้ <strong className="text-primary-cyan font-normal">Google Stitch</strong> เนรมิต UI ให้สวยงามระดับมืออาชีพ พร้อมใส่ลูกเล่นให้หน้าเว็บตอบสนองต่อผู้ใช้งาน
+                  ออกแบบ UI ระดับมืออาชีพด้วย <strong className="text-primary-cyan font-normal">Google Stitch</strong> ใส่ลูกเล่นให้เว็บโต้ตอบได้
+                  พร้อมเรียนรู้ <strong className="text-primary-cyan font-normal">AI-Assisted Debugging</strong> เมื่อโค้ดมีปัญหา
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ต่อยอด UI Components โดยอ้างอิงจาก Design System ด้วย Stitch</p>
+                    <p className="text-[#e3e2e2]">ต่อยอด UI Components จาก Design System ด้วย Stitch</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">เข้าใจ DOM & Event Listener เบื้องต้น เพื่อการคลิกโต้ตอบ</p>
+                    <p className="text-[#e3e2e2]">DOM & Event Listener — ทำ Modal, Theme Switcher, Responsive Layout</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ให้ AI เขียนโค้ดเปิดปิด Modal หรือทำ Theme Switcher (Dark Mode)</p>
+                    <p className="text-[#e3e2e2]">ใช้ <span className="text-primary-cyan">DevTools + AI</span> หาและแก้ Bug ด้วย Error Message / Screenshot</p>
                   </div>
                 </div>
               </div>
@@ -191,22 +192,23 @@ function App() {
                 />
               </div>
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">State Management & Web Apps</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">Building Database-Driven Web Apps with AI</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  จากเว็บหน้าเดียว สู่การสร้างแอปพลิเคชันที่มีตรรกะจริง เข้าใจคอนเซปต์ของ "State" ข้อมูลเปลี่ยน หน้าจอเปลี่ยน และเทคนิค AI-Assisted Debugging
+                  จากเว็บหน้าเดียว สู่ <strong className="text-primary-cyan font-normal">Web App ที่ใช้งานจริงได้</strong> มีทั้ง Logic, State และต่อ
+                  <strong className="text-primary-cyan font-normal"> Database</strong> — รีเฟรชแล้วข้อมูลไม่หาย
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">เข้าใจความหมายของ State และการควบคุม Logic ของเว็บแอป</p>
+                    <p className="text-[#e3e2e2]">เข้าใจ State + Logic — ออกแบบตรรกะการทำงานของแอป</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">สร้าง Web App เบื้องต้น เช่น เครื่องคิดเลข หรือ To-Do List</p>
+                    <p className="text-[#e3e2e2]">เลือกใช้ DB ที่เหมาะ: <span className="text-primary-cyan">Google Sheets, Firebase, SQLite, Cloudflare D1</span></p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ใช้ DevTools ร่วมกับ AI ในการหาและแก้บั๊กอย่างมีประสิทธิภาพ</p>
+                    <p className="text-[#e3e2e2]">สั่ง AI ทำ <span className="text-primary-cyan">CRUD</span> ครบวงจร: Create / Read / Update / Delete</p>
                   </div>
                 </div>
               </div>
@@ -217,22 +219,23 @@ function App() {
           <section className="glass-panel glass-panel-hover transition-all duration-300">
             <div className="grid md:grid-cols-12 h-full">
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center order-2 md:order-1 border-r border-border-glass">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">Databases & Persistent Data</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">From Problem to Product — System Design with AI</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  แก้ปัญหา "ข้อมูลหายเวลารีเฟรช" เรียนรู้การเชื่อมต่อแอปพลิเคชันกับ <strong>Database</strong> หลากรูปแบบด้วย AI ตั้งแต่ Google Sheets, Firebase ไปจนถึงระบบ Cloud Native อย่าง Cloudflare D1
+                  คิดเป็น <strong className="text-primary-cyan font-normal">Product Designer</strong> ไม่ใช่แค่คนสั่ง AI เขียนโค้ด —
+                  ออกแบบ solution ให้ตอบโจทย์งานจริงด้วย Backward Design และ Agent Framework
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">เข้าใจสถาปัตยกรรมการเก็บข้อมูลเบื้องต้นและประโยชน์ของฐานข้อมูล</p>
+                    <p className="text-[#e3e2e2]">Agent Framework: <span className="text-primary-cyan">Context · Goal · Constraints · Files · Workflow</span></p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">สั่ง AI ให้สร้างโครงสร้างต่อเชื่อมฐานข้อมูลแบบ CRUD ครบวงจร</p>
+                    <p className="text-[#e3e2e2]">Backward Design + Workflow: <span className="text-primary-cyan">Research → Plan → Generate → Review</span></p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">เปลี่ยน Web App เป็นแอปพลิเคชันใช้งานจริงที่สามารถบันทึกและอ่านข้อมูลได้</p>
+                    <p className="text-[#e3e2e2]">Case Studies จากงานจริง: HR, ขาย, ครู, ร้านค้า — เล็ง · ยิง · ปรับ</p>
                   </div>
                 </div>
               </div>
