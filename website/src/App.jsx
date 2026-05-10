@@ -134,7 +134,7 @@ function App() {
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ดึงดีไซน์ Google Stitch ผ่าน MCP + Deploy ขึ้น GitHub Pages</p>
+                    <p className="text-[#e3e2e2]">ใช้ Git CLI + Deploy เว็บขึ้น <span className="text-primary-cyan">GitHub Pages</span></p>
                   </div>
                 </div>
               </div>
@@ -153,7 +153,7 @@ function App() {
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ต่อยอด UI Components จาก Design System ด้วย Stitch</p>
+                    <p className="text-[#e3e2e2]">ดึงดีไซน์จาก <span className="text-primary-cyan">Google Stitch ผ่าน MCP</span> มาเป็นโค้ดอัตโนมัติ</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
