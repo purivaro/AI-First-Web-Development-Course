@@ -176,13 +176,149 @@ function App() {
             </div>
           </section>
 
-          {/* Coming Soon... */}
-          <div className="py-12 border-t border-border-glass mt-12 flex justify-center">
-            <div className="glass-panel px-6 py-3 flex items-center gap-4">
-              <span className="w-2 h-2 bg-secondary-purple animate-ping rounded-full"></span>
-              <p className="font-mono text-sm text-[#b9cacb] uppercase tracking-widest">Awaiting Further Instructions...</p>
+          {/* Session 3 */}
+          <section className="glass-panel glass-panel-hover transition-all duration-300">
+            <div className="grid md:grid-cols-12 h-full">
+              <div className="md:col-span-5 relative border-r border-border-glass p-2">
+                 <div className="absolute top-4 left-4 font-mono text-xs text-primary-cyan uppercase tracking-widest bg-deep-space/80 px-2 py-1 border border-border-glass z-10">
+                    MODULE_03
+                 </div>
+                <img
+                  src={`${baseAssetPath}/session3_banner.png`}
+                  alt="Session 3"
+                  className="w-full h-full object-cover min-h-[300px] grayscale-[30%] contrast-125"
+                />
+              </div>
+              <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
+                <h3 className="font-display text-3xl font-bold text-white mb-6">Interactive JavaScript & AI-Assisted Debugging</h3>
+                <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
+                  ทำเว็บให้ขยับได้ + Debug แบบง่ายด้วย AI เรียนรู้วิธีการทำให้หน้าเว็บตอบสนองกับผู้ใช้ และการใช้ AI ในการหาบั๊กและแก้ปัญหา
+                </p>
+                <div className="space-y-4 font-mono text-sm">
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">เข้าใจ DOM และ Event Listener เพื่อสร้างการโต้ตอบ</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">ปรับเปลี่ยนข้อความ สี และองค์ประกอบต่างๆ แบบไดนามิก</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">ใช้ AI เป็นผู้ช่วยในการวิเคราะห์ Error และ Debug โค้ด</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
+
+          {/* Session 4 */}
+          <section className="glass-panel glass-panel-hover transition-all duration-300">
+            <div className="grid md:grid-cols-12 h-full">
+              <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center order-2 md:order-1 border-r border-border-glass">
+                <h3 className="font-display text-3xl font-bold text-white mb-6">Building AI-Generated Web Apps with Real Logic</h3>
+                <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
+                  จากหน้าเว็บธรรมดา ก้าวสู่เว็บแอปพลิเคชันที่มีตรรกะจริง เข้าใจการจัดการ State และปล่อยให้ AI จัดการโครงสร้างโค้ดที่ซับซ้อน
+                </p>
+                <div className="space-y-4 font-mono text-sm">
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">ทำความเข้าใจ State และการอัปเดต UI ตามข้อมูล</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">สั่ง AI ให้สร้าง Web App เต็มรูปแบบ เช่น To-Do, Notes หรือ Calculator</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">เทคนิคการให้ AI ช่วย Refactor โค้ดให้สั้นและอ่านง่ายขึ้น</p>
+                  </div>
+                </div>
+              </div>
+              <div className="md:col-span-5 relative order-1 md:order-2 p-2">
+                 <div className="absolute top-4 right-4 font-mono text-xs text-primary-cyan uppercase tracking-widest bg-deep-space/80 px-2 py-1 border border-border-glass z-10">
+                    MODULE_04
+                 </div>
+                <img
+                  src={`${baseAssetPath}/session4_banner.png`}
+                  alt="Session 4"
+                  className="w-full h-full object-cover min-h-[300px] grayscale-[30%] contrast-125"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* Session 5 */}
+          <section className="glass-panel glass-panel-hover transition-all duration-300">
+            <div className="grid md:grid-cols-12 h-full">
+              <div className="md:col-span-5 relative border-r border-border-glass p-2">
+                 <div className="absolute top-4 left-4 font-mono text-xs text-primary-cyan uppercase tracking-widest bg-deep-space/80 px-2 py-1 border border-border-glass z-10">
+                    MODULE_05
+                 </div>
+                <img
+                  src={`${baseAssetPath}/session5_banner.png`}
+                  alt="Session 5"
+                  className="w-full h-full object-cover min-h-[300px] grayscale-[30%] contrast-125"
+                />
+              </div>
+              <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
+                <h3 className="font-display text-3xl font-bold text-white mb-6">AI-Driven API Integration & Dynamic Data</h3>
+                <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
+                  ดึงข้อมูลจริงจากระบบอื่นมาแสดงผลบนเว็บผ่าน API โดยใช้ AI เป็นผู้ช่วยเขียนโค้ดและจัดการข้อมูล JSON ที่ซับซ้อน
+                </p>
+                <div className="space-y-4 font-mono text-sm">
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">ปูพื้นฐาน API และ JSON แบบเข้าใจง่าย ไม่ต้องเขียนระบบหลังบ้านเอง</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">สร้างโค้ด Fetch Data อัตโนมัติด้วย AI เช่น ข้อมูลสภาพอากาศ หรือคำคม</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">ให้ AI ตีความ Error Message จาก API และแก้ไขปัญหา</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Session 6 */}
+          <section className="glass-panel glass-panel-hover transition-all duration-300">
+            <div className="grid md:grid-cols-12 h-full">
+              <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center order-2 md:order-1 border-r border-border-glass">
+                <h3 className="font-display text-3xl font-bold text-white mb-6">Final Project: AI-Powered Web/App Development</h3>
+                <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
+                  นำความรู้ทั้งหมดมาสร้างโปรเจกต์จริงของตัวเองตั้งแต่ต้นจนจบ ตั้งแต่การคิดไอเดีย ออกแบบ เขียนโค้ด ไปจนถึงการ Deploy งานขึ้นระบบออนไลน์
+                </p>
+                <div className="space-y-4 font-mono text-sm">
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">ร่วมระดมความคิดและให้ AI ช่วยวางโครงสร้างโปรเจกต์</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">ทำงานร่วมกับ AI ในทุกมิติ (UI/UX, Logic, API Integration)</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">นำเสนอผลงานจริงบน Portfolio ออนไลน์ที่ Deploy ด้วย AI</p>
+                  </div>
+                </div>
+              </div>
+              <div className="md:col-span-5 relative order-1 md:order-2 p-2">
+                 <div className="absolute top-4 right-4 font-mono text-xs text-primary-cyan uppercase tracking-widest bg-deep-space/80 px-2 py-1 border border-border-glass z-10">
+                    MODULE_06
+                 </div>
+                <img
+                  src={`${baseAssetPath}/session6_banner.png`}
+                  alt="Session 6"
+                  className="w-full h-full object-cover min-h-[300px] grayscale-[30%] contrast-125"
+                />
+              </div>
+            </div>
+          </section>
         </div>
       </main>
 
