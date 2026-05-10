@@ -2,9 +2,14 @@
 
 Welcome to the **AI-First Web Development Course** repository! This course is designed to transform beginners into "AI-First Web Architects". Instead of teaching students how to write every single line of code from memory, we teach them how to **control and command AI** to build professional web applications.
 
-**Instructor:** พระมหาอนวัช ภูริวโร
+<img src="./assets/images/teacher.png" alt="พระมหาอนวัช ภูริวโร" width="150" style="border-radius: 8px; margin-bottom: 16px;" />
 
----
+**Instructor Profile**
+- **ชื่อ:** พระมหาอนวัช ภูริวโร (หลวงพี่ภูริ)
+- **ตำแหน่ง:** หัวหน้าศูนย์พัฒนาเทคโนโลยีเพื่อศีลธรรม (Head of the Center of Technological Development for Morality)
+- **ที่ทำงาน:** สถาบันพัฒนาเยาวชนโลก Gydi
+- **Website:** [purivaro.com](https://purivaro.com)
+- **Email:** aun.puri@gmail.com
 
 ## 🎯 Course Philosophy: The "AI-First Architect"
 

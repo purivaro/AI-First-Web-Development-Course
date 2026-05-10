@@ -38,15 +38,36 @@ function App() {
               </button>
             </div>
             
-            <div className="mt-12 flex items-center gap-4 glass-panel p-4 inline-flex">
-              <img
-                src={`${baseAssetPath}/images/teacher.png`}
-                alt="Teacher Profile"
-                className="w-12 h-12 rounded-none border border-border-glass object-cover grayscale opacity-80"
-              />
-              <div>
-                <p className="font-mono text-xs text-secondary-purple uppercase tracking-wider">Instructor_Root</p>
-                <p className="font-display font-semibold text-white">พระมหาอนวัช ภูริวโร</p>
+            <div className="mt-12 glass-panel p-6 inline-block w-full max-w-lg">
+              <div className="flex items-start gap-5 mb-4">
+                <img
+                  src={`${baseAssetPath}/images/teacher.png`}
+                  alt="Teacher Profile"
+                  className="w-20 h-20 rounded-md border border-border-glass object-cover"
+                />
+                <div>
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <p className="font-mono text-xs text-secondary-purple uppercase tracking-wider">Instructor_Root</p>
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary-cyan animate-pulse"></span>
+                  </div>
+                  <h3 className="font-display font-bold text-white text-xl">พระมหาอนวัช ภูริวโร <span className="text-[#b9cacb] font-normal text-base">(หลวงพี่ภูริ)</span></h3>
+                  <p className="text-primary-cyan text-sm mt-1">หัวหน้าศูนย์พัฒนาเทคโนโลยีเพื่อศีลธรรม</p>
+                  <p className="text-[#b9cacb] text-xs font-mono mt-0.5">Head of the Center of Technological Development for Morality</p>
+                </div>
+              </div>
+              <div className="space-y-2 mt-4 pt-4 border-t border-border-glass/50 font-mono text-xs">
+                 <div className="flex items-center gap-3">
+                    <span className="text-secondary-purple w-12">ORG:</span>
+                    <span className="text-[#e3e2e2] font-body text-sm">สถาบันพัฒนาเยาวชนโลก Gydi</span>
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <span className="text-secondary-purple w-12">WEB:</span>
+                    <a href="https://purivaro.com" target="_blank" rel="noreferrer" className="text-primary-cyan hover:underline hover:text-white transition-colors">purivaro.com</a>
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <span className="text-secondary-purple w-12">MAIL:</span>
+                    <a href="mailto:aun.puri@gmail.com" className="text-primary-cyan hover:underline hover:text-white transition-colors">aun.puri@gmail.com</a>
+                 </div>
               </div>
             </div>
           </div>
@@ -168,7 +189,7 @@ function App() {
       {/* Footer */}
       <footer className="relative border-t border-border-glass bg-deep-space py-12 text-center z-10">
         <div className="flex justify-center mb-6 opacity-30 hover:opacity-100 transition-opacity">
-          <img src={`${baseAssetPath}/images/teacher.png`} alt="Teacher" className="h-12 w-auto grayscale" />
+          <img src={`${baseAssetPath}/images/teacher.png`} alt="Teacher" className="h-12 w-auto" />
         </div>
         <p className="font-mono text-xs text-[#b9cacb] tracking-widest uppercase">© 2026 AI-First Web Architecture.</p>
         <p className="font-mono text-xs text-[#474646] tracking-widest uppercase mt-4">System powered by React + Tailwind CSS + Google Stitch.</p>
