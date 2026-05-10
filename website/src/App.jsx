@@ -347,11 +347,11 @@ function App() {
 
             <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
               <div className="shrink-0 relative group">
-                <div className="absolute inset-0 bg-primary-cyan/20 blur-xl rounded-full group-hover:bg-primary-cyan/40 transition-colors duration-500"></div>
+                <div className="absolute inset-0 bg-primary-cyan/20 blur-xl rounded-xl group-hover:bg-primary-cyan/40 transition-colors duration-500"></div>
                 <img
                   src={`${baseAssetPath}/images/teacher.png`}
                   alt="Teacher Profile"
-                  className="relative w-40 h-40 md:w-56 md:h-56 rounded-full border-2 border-primary-cyan object-cover shadow-[0_0_25px_rgba(0,242,255,0.3)]"
+                  className="relative w-40 h-40 md:w-56 md:h-56 rounded-xl border-2 border-primary-cyan object-cover shadow-[0_0_25px_rgba(0,242,255,0.3)]"
                 />
               </div>
 
