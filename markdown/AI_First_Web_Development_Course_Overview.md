@@ -157,32 +157,33 @@
 
 ---
 
-## 🌐 Session 5 — AI-Driven API Integration & Dynamic Data
+## 🌐 Session 5 — AI-Driven API Integration & Intro to RAG
 
-*ดึงข้อมูลจริงจาก API โดยใช้ AI เป็นตัวหลัก*
+*ดึงข้อมูลจริงจาก API และสร้าง AI Assistant ของตัวเองด้วย RAG*
 
 ### 🎯 เป้าหมายคาบนี้
-- เข้าใจ API แบบไม่ต้องเขียนเอง
-- ใช้ AI สร้างโค้ด fetch API
+- เข้าใจการดึงข้อมูลจาก API
+- รู้จัก RAG (Retrieval-Augmented Generation) เบื้องต้น
+- ใช้ AI สร้างแอพที่เชื่อมต่อกับ LLM API และข้อมูลของเราเอง
 - Debug API ด้วย AI
 
 ### 📖 เนื้อหา
-- API คืออะไร (แบบง่ายที่สุด)
-- JSON คืออะไร
-- ให้ AI สร้าง API App เช่น
-  - Weather App
-  - Random Quote
-  - Image Search
-- Debug API ด้วย AI
+- API คืออะไร (แบบง่ายที่สุด) และโครงสร้าง JSON
+- Intro to RAG: ทำอย่างไรให้ AI ตอบคำถามจากข้อมูลที่เรามี (เช่น ไฟล์ PDF หรือฐานข้อมูลความรู้)
+- ให้ AI สร้าง Web App เช่น
+  - Weather App / Image Search
+  - Custom AI Chatbot แบบมี RAG เบื้องต้น
+- Debug API & AI Prompt ด้วย AI
 
 ### 🛠️ Workshop
-- เลือกทำ 1 API App
+- เลือกทำ 1 API App หรือ Chatbot เล็กๆ
+- ลองสร้างระบบ RAG อย่างง่ายเพื่อดึงข้อมูลมาตอบ
 - ให้ AI ปรับ UI/UX
 - ให้ AI อธิบาย error message
 
 ### ✅ Learning Outcomes
-- เข้าใจ API
-- ใช้ AI เขียน API integration ได้
+- เข้าใจ API และ RAG (Retrieval-Augmented Generation)
+- ใช้ AI เขียน API integration และเชื่อมต่อ LLM ได้
 - Debug API ได้ด้วย AI
 
 ---

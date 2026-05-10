@@ -262,9 +262,9 @@ function App() {
                 />
               </div>
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">AI-Driven API Integration & Dynamic Data</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">API Integration & Intro to RAG</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  ดึงข้อมูลจริงจากระบบอื่นมาแสดงผลบนเว็บผ่าน API โดยใช้ AI เป็นผู้ช่วยเขียนโค้ดและจัดการข้อมูล JSON ที่ซับซ้อน
+                  ดึงข้อมูลผ่าน API และทำความรู้จักกับ <strong>RAG (Retrieval-Augmented Generation)</strong> เพื่อสร้าง AI Chatbot ที่สามารถตอบคำถามจากฐานข้อมูลหรือเอกสารของเราเองได้
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
@@ -273,11 +273,11 @@ function App() {
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">สร้างโค้ด Fetch Data อัตโนมัติด้วย AI เช่น ข้อมูลสภาพอากาศ หรือคำคม</p>
+                    <p className="text-[#e3e2e2]">เรียนรู้แนวคิด RAG เบื้องต้น ทำให้ AI ฉลาดขึ้นด้วยข้อมูลของเรา</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ให้ AI ตีความ Error Message จาก API และแก้ไขปัญหา</p>
+                    <p className="text-[#e3e2e2]">สร้าง Web App เชื่อมต่อ LLM API หรือดึงข้อมูลแบบไดนามิก</p>
                   </div>
                 </div>
               </div>
