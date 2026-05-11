@@ -83,7 +83,7 @@ function App() {
                 <div className="w-2 h-2 rounded-full bg-green-500/50"></div>
               </div>
               <img
-                src={`${baseAssetPath}/hero.png`}
+                src={`${baseAssetPath}/new_hero.png`}
                 alt="Course Hero"
                 className="w-full object-cover aspect-[4/3] mt-8 grayscale-[20%] contrast-125"
               />
@@ -209,6 +209,10 @@ function App() {
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
                     <p className="text-[#e3e2e2]">สั่ง AI ทำ <span className="text-primary-cyan">CRUD</span> ครบวงจร: Create / Read / Update / Delete</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">สร้าง <span className="text-primary-cyan">Dashboard</span> แสดงข้อมูลจาก DB เป็นตาราง / กราฟ / สรุปยอด</p>
                   </div>
                 </div>
               </div>
