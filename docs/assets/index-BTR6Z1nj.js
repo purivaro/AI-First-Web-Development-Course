@@ -50,10 +50,10 @@ Error generating stack: `+e.message+`
 | 1 | 0:00 – 0:20 | ปฐมนิเทศ: แนวคิด AI-First Web Development คืออะไร |
 | 2 | 0:20 – 0:50 | Mindset เปลี่ยนชีวิต: **Agent vs Chatbot** และศิลปะการตั้งคำถามกลับ |
 | 3 | 0:50 – 1:30 | พื้นฐานที่ต้องรู้: Markdown และ Workshop เขียน \`requirements.md\` |
-| 4 | 1:30 – 1:45 | *พักเบรก* |
-| 5 | 1:45 – 2:15 | ลงมือสร้าง: ให้ AI เขียนโค้ดจาก \`requirements.md\` |
-| 6 | 2:15 – 2:40 | Version Control & Deploy: ใช้ AI จัดการ Git (add/commit/push) และ Setup GitHub Pages |
-| 7 | 2:40 – 2:45 | สรุปบทเรียน & ทบทวน Workflow |
+| 4 | 1:30 – 1:40 | *พักเบรก* |
+| 5 | 1:40 – 2:10 | ลงมือสร้าง: ให้ AI เขียนโค้ดจาก \`requirements.md\` |
+| 6 | 2:10 – 2:35 | Version Control & Deploy: ใช้ AI จัดการ Git (add/commit/push) และ Setup GitHub Pages |
+| 7 | 2:35 – 2:45 | สรุปบทเรียน & ทบทวน Workflow |
 
 ---
 
