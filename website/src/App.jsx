@@ -1,24 +1,19 @@
 import { useState, useEffect } from 'react';
 import SessionDetail from './SessionDetail';
-import session1Markdown from '../../markdown/session-1.md?raw';
-import session2Markdown from '../../markdown/session-2.md?raw';
-import session3Markdown from '../../markdown/session-3.md?raw';
-import session4Markdown from '../../markdown/session-4.md?raw';
-import session5Markdown from '../../markdown/session-5.md?raw';
-import session6Markdown from '../../markdown/session-6.md?raw';
 
-const sessionContent = {
-  '1': { moduleLabel: 'MODULE_01 // Session Detail', content: session1Markdown },
-  '2': { moduleLabel: 'MODULE_02 // Session Detail', content: session2Markdown },
-  '3': { moduleLabel: 'MODULE_03 // Session Detail', content: session3Markdown },
-  '4': { moduleLabel: 'MODULE_04 // Session Detail', content: session4Markdown },
-  '5': { moduleLabel: 'MODULE_05 // Session Detail', content: session5Markdown },
-  '6': { moduleLabel: 'MODULE_06 // Session Detail', content: session6Markdown },
+const sessionLoaders = {
+  '1': () => import('../../markdown/session-1.md?raw').then((m) => m.default),
+  '2': () => import('../../markdown/session-2.md?raw').then((m) => m.default),
+  '3': () => import('../../markdown/session-3.md?raw').then((m) => m.default),
+  '4': () => import('../../markdown/session-4.md?raw').then((m) => m.default),
+  '5': () => import('../../markdown/session-5.md?raw').then((m) => m.default),
+  '6': () => import('../../markdown/session-6.md?raw').then((m) => m.default),
 };
 
 function App() {
   const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
   const [route, setRoute] = useState(() => window.location.hash.replace('#', '') || '/');
+  const [sessionMarkdown, setSessionMarkdown] = useState(null);
   const baseAssetPath = '/AI-First-Web-Development-Course/assets';
 
   useEffect(() => {
@@ -32,12 +27,25 @@ function App() {
   }, [route]);
 
   const sessionMatch = route.match(/^\/session\/(\d+)$/);
-  if (sessionMatch && sessionContent[sessionMatch[1]]) {
-    const { moduleLabel, content } = sessionContent[sessionMatch[1]];
+  const sessionId = sessionMatch?.[1];
+
+  useEffect(() => {
+    if (sessionId && sessionLoaders[sessionId]) {
+      setSessionMarkdown(null);
+      let cancelled = false;
+      sessionLoaders[sessionId]().then((content) => {
+        if (!cancelled) setSessionMarkdown(content);
+      });
+      return () => { cancelled = true; };
+    }
+  }, [sessionId]);
+
+  if (sessionId && sessionLoaders[sessionId]) {
+    const moduleLabel = `MODULE_${sessionId.padStart(2, '0')} // Session Detail`;
     return (
       <SessionDetail
         moduleLabel={moduleLabel}
-        content={content}
+        content={sessionMarkdown ?? '_กำลังโหลด..._'}
         onBack={() => { window.location.hash = ''; }}
       />
     );
@@ -181,7 +189,7 @@ function App() {
                     href="#/session/1"
                     className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
                   >
-                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียด
                   </a>
                 </div>
               </div>
@@ -216,7 +224,7 @@ function App() {
                     href="#/session/2"
                     className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
                   >
-                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียด
                   </a>
                 </div>
               </div>
@@ -275,7 +283,7 @@ function App() {
                     href="#/session/3"
                     className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
                   >
-                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียด
                   </a>
                 </div>
               </div>
@@ -310,7 +318,7 @@ function App() {
                     href="#/session/4"
                     className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
                   >
-                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียด
                   </a>
                 </div>
               </div>
@@ -364,7 +372,7 @@ function App() {
                     href="#/session/5"
                     className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
                   >
-                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียด
                   </a>
                 </div>
               </div>
@@ -398,7 +406,7 @@ function App() {
                     href="#/session/6"
                     className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
                   >
-                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียด
                   </a>
                 </div>
               </div>
