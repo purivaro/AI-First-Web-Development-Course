@@ -52,7 +52,7 @@
 - **วิถี AI-First Web Architect:**
   - ทำไมต้องใช้ Markdown (`.md`) ในการเป็น Single Source of Truth
   - การเขียน Prompt ให้ AI เข้าใจด้วยโครงสร้าง Markdown
-- **การเนรมิต UI ด้วย Google Stitch:**
+- **การสร้าง UI ด้วย Google Stitch:**
   - รู้จัก Google Stitch และระบบ Design Tokens
   - การเชื่อมต่อ MCP (Model Context Protocol) เพื่อดึงดีไซน์จาก Stitch มาเขียนโค้ดอัตโนมัติ
 - **Version Control สำหรับผู้กำกับ AI:**

@@ -201,7 +201,7 @@ UI (หน้าตาที่ให้ user กรอก/ดู)
 ทุก feature ที่ผ่าน → ให้ AI commit:
 > *"feature นี้ผ่านแล้ว ช่วย git add + commit + push ให้ ใช้ commit message สั้นๆ ที่บอกว่าทำอะไร"*
 
-> 🎯 ปลอดภัยจาก "เผลอแก้แล้วพังหมด" — commit ไว้ rollback ได้
+> 🎯 ปลอดภัยจาก "เผลอแก้แล้วเกิดข้อผิดพลาดรุนแรง" — commit ไว้ rollback ได้
 
 ### 5.5 Time Check ทุก 15 นาที
 - **15:00** — ควรเสร็จ feature ที่ 1
