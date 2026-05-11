@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react';
 import SessionDetail from './SessionDetail';
 import session1Markdown from '../../markdown/session-1.md?raw';
+import session2Markdown from '../../markdown/session-2.md?raw';
+import session3Markdown from '../../markdown/session-3.md?raw';
+import session4Markdown from '../../markdown/session-4.md?raw';
+import session5Markdown from '../../markdown/session-5.md?raw';
+import session6Markdown from '../../markdown/session-6.md?raw';
 
 const sessionContent = {
   '1': { moduleLabel: 'MODULE_01 // Session Detail', content: session1Markdown },
+  '2': { moduleLabel: 'MODULE_02 // Session Detail', content: session2Markdown },
+  '3': { moduleLabel: 'MODULE_03 // Session Detail', content: session3Markdown },
+  '4': { moduleLabel: 'MODULE_04 // Session Detail', content: session4Markdown },
+  '5': { moduleLabel: 'MODULE_05 // Session Detail', content: session5Markdown },
+  '6': { moduleLabel: 'MODULE_06 // Session Detail', content: session6Markdown },
 };
 
 function App() {
@@ -201,6 +211,14 @@ function App() {
                     <p className="text-[#e3e2e2]">ใช้ <span className="text-primary-cyan">DevTools + AI</span> หาและแก้ Bug ด้วย Error Message / Screenshot</p>
                   </div>
                 </div>
+                <div className="mt-8">
+                  <a
+                    href="#/session/2"
+                    className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
+                  >
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                  </a>
+                </div>
               </div>
               <div className="md:col-span-5 relative order-1 md:order-2 p-2">
                  <div className="absolute top-4 right-4 font-mono text-xs text-primary-cyan uppercase tracking-widest bg-deep-space/80 px-2 py-1 border border-border-glass z-10">
@@ -252,6 +270,14 @@ function App() {
                     <p className="text-[#e3e2e2]">สร้าง <span className="text-primary-cyan">Dashboard</span> แสดงข้อมูลจาก DB เป็นตาราง / กราฟ / สรุปยอด</p>
                   </div>
                 </div>
+                <div className="mt-8">
+                  <a
+                    href="#/session/3"
+                    className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
+                  >
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                  </a>
+                </div>
               </div>
             </div>
           </section>
@@ -278,6 +304,14 @@ function App() {
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
                     <p className="text-[#e3e2e2]">Case Studies จากงานจริง: HR, ขาย, ครู, ร้านค้า — เล็ง · ยิง · ปรับ</p>
                   </div>
+                </div>
+                <div className="mt-8">
+                  <a
+                    href="#/session/4"
+                    className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
+                  >
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                  </a>
                 </div>
               </div>
               <div className="md:col-span-5 relative order-1 md:order-2 p-2">
@@ -325,6 +359,14 @@ function App() {
                     <p className="text-[#e3e2e2]">สร้างผลงาน AI Assistant ที่ทำงานอยู่บนหน้าเว็บของเราเอง</p>
                   </div>
                 </div>
+                <div className="mt-8">
+                  <a
+                    href="#/session/5"
+                    className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
+                  >
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                  </a>
+                </div>
               </div>
             </div>
           </section>
@@ -350,6 +392,14 @@ function App() {
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
                     <p className="text-[#e3e2e2]">นำเสนอผลงานจริงบน Portfolio ออนไลน์ที่ Deploy ด้วย AI</p>
                   </div>
+                </div>
+                <div className="mt-8">
+                  <a
+                    href="#/session/6"
+                    className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
+                  >
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                  </a>
                 </div>
               </div>
               <div className="md:col-span-5 relative order-1 md:order-2 p-2">

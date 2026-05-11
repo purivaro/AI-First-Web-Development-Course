@@ -1,7 +1,7 @@
 # 📋 Worklog — สรุปงานที่ทำล่าสุด
 
 > ไฟล์นี้ใช้คุยงานต่อเนื่อง สรุปสถานะปัจจุบันของหลักสูตร + เว็บ พร้อมสิ่งที่อาจจะทำต่อ
-> อัปเดตล่าสุด: 2026-05-11
+> อัปเดตล่าสุด: 2026-05-11 (รอบ 2: เพิ่ม session 2-6 ครบ + หน้าเว็บรายละเอียดครบ)
 
 ---
 
@@ -72,15 +72,16 @@
 ## 🔜 สิ่งที่อาจจะทำต่อ (TODO / Backlog)
 
 ### หลักสูตร
-- [ ] เขียน `session-3.md` (Database-Driven Web Apps) ฉบับเต็ม
-- [ ] เขียน `session-4.md` (System Design) ฉบับเต็มพร้อม Case Studies
-- [ ] ปรับ Session 5 (API + RAG) ให้สอดคล้องกับธีมใหม่
-- [ ] เขียน Session 6 (Final Project) ฉบับเต็ม
+- [x] ~~เขียน `session-2.md` ฉบับเต็ม (Design System + Stitch + React intro + Debug)~~
+- [x] ~~เขียน `session-3.md` (Database-Driven Web Apps) ฉบับเต็ม~~
+- [x] ~~เขียน `session-4.md` (System Design + อัปเดตความรู้/Tool) ฉบับเต็ม~~
+- [x] ~~เขียน `session-5.md` (API + LLM API + RAG) ฉบับเต็ม~~
+- [x] ~~เขียน `session-6.md` (Final Project) ฉบับเต็ม~~
 - [ ] ทำใบงาน (worksheet) สำหรับ Session 2-6
 
 ### เว็บไซต์
-- [ ] เพิ่มหน้ารายละเอียดสำหรับ Session 2-6 (ใช้ pattern เดิมจาก Session 1)
-- [ ] เพิ่มปุ่ม "อ่านรายละเอียด" ที่การ์ด Session 2-6
+- [x] ~~เพิ่มหน้ารายละเอียดสำหรับ Session 2-6 (ใช้ pattern เดิมจาก Session 1)~~
+- [x] ~~เพิ่มปุ่ม "อ่านรายละเอียด" ที่การ์ด Session 2-6~~
 - [ ] อาจจะเพิ่ม Table of Contents ในหน้ารายละเอียด (sticky sidebar)
 - [ ] เพิ่ม "Print/Download as PDF" สำหรับครูที่อยากเอาไปใช้สอน
 
