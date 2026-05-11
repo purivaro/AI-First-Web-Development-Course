@@ -195,7 +195,7 @@ function App() {
                 <h3 className="font-display text-3xl font-bold text-white mb-6">Building Database-Driven Web Apps with AI</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
                   จากเว็บหน้าเดียว สู่ <strong className="text-primary-cyan font-normal">Web App ที่ใช้งานจริงได้</strong> มีทั้ง Logic, State และต่อ
-                  <strong className="text-primary-cyan font-normal"> Database</strong> — รีเฟรชแล้วข้อมูลไม่หาย
+                  <strong className="text-primary-cyan font-normal"> Database</strong> สำหรับเก็บข้อมูลถาวร
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
