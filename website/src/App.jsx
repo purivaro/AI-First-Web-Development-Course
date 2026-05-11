@@ -1,8 +1,37 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import SessionDetail from './SessionDetail';
+import session1Markdown from '../../markdown/session-1.md?raw';
+
+const sessionContent = {
+  '1': { moduleLabel: 'MODULE_01 // Session Detail', content: session1Markdown },
+};
 
 function App() {
   const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
+  const [route, setRoute] = useState(() => window.location.hash.replace('#', '') || '/');
   const baseAssetPath = '/AI-First-Web-Development-Course/assets';
+
+  useEffect(() => {
+    const onHashChange = () => setRoute(window.location.hash.replace('#', '') || '/');
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [route]);
+
+  const sessionMatch = route.match(/^\/session\/(\d+)$/);
+  if (sessionMatch && sessionContent[sessionMatch[1]]) {
+    const { moduleLabel, content } = sessionContent[sessionMatch[1]];
+    return (
+      <SessionDetail
+        moduleLabel={moduleLabel}
+        content={content}
+        onBack={() => { window.location.hash = ''; }}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-deep-space text-[#e3e2e2] font-body relative overflow-hidden">
@@ -136,6 +165,14 @@ function App() {
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
                     <p className="text-[#e3e2e2]">ใช้ Git CLI + Deploy เว็บขึ้น <span className="text-primary-cyan">GitHub Pages</span></p>
                   </div>
+                </div>
+                <div className="mt-8">
+                  <a
+                    href="#/session/1"
+                    className="inline-flex items-center gap-2 glass-panel px-6 py-3 font-mono text-primary-cyan uppercase tracking-widest text-xs hover:bg-[rgba(0,242,255,0.1)] transition-all border-primary-cyan border-glow-cyan"
+                  >
+                    <span className="text-secondary-purple">{'>'}</span> อ่านรายละเอียดคาบนี้
+                  </a>
                 </div>
               </div>
             </div>

@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(rm -rf docs/assets)",
+      "Bash(rm -rf /Users/purivaro/Work/DCI/course-syllabus/docs/assets)",
+      "Bash(cp -r website/dist/*:*)",
+      "Bash(cp -r /Users/purivaro/Work/DCI/course-syllabus/website/dist/*:*)",
+      "Bash(cp:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git rm:*)"
+    ]
+  }
+}
