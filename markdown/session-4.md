@@ -61,49 +61,75 @@ Client (เว็บเรา)  ←  Response ←  API Server
 ```
 
 **Request (ส่งไป):**
-- URL: `https://api.openweathermap.org/data/2.5/weather?q=Bangkok`
+- URL: `https://jsonplaceholder.typicode.com/posts/1`
 - Method: `GET` (ขอข้อมูล) หรือ `POST` (ส่งข้อมูลไปสร้าง)
-- Headers: ข้อมูลเพิ่ม เช่น API Key
+- Headers: ข้อมูลเพิ่ม เช่น API Key (บาง API ต้องมี)
 
 **Response (ได้กลับมา):** เป็น **JSON**
 
-### 2.3 JSON — ภาษากลางของ API
+### 2.3 ลองเล่นกับ API ตัวจริง: **JSONPlaceholder** 🎯
+> 🎯 **JSONPlaceholder** = API ฟรีสำหรับฝึกหัด — ไม่ต้องสมัคร ไม่ต้อง API Key เปิด URL ดูได้ทันที
+
+**ลองเปิดในเบราว์เซอร์ดู (คลิกเลย):**
+- 📄 [โพสต์ 1 อัน](https://jsonplaceholder.typicode.com/posts/1)
+- 📋 [โพสต์ทั้งหมด](https://jsonplaceholder.typicode.com/posts) — 100 รายการ
+- 👤 [User 1 คน](https://jsonplaceholder.typicode.com/users/1)
+- 💬 [Comment ของโพสต์ 1](https://jsonplaceholder.typicode.com/posts/1/comments)
+
+**Endpoint ที่ใช้บ่อย:**
+| Endpoint | ได้อะไร |
+|---|---|
+| `/posts` | โพสต์ 100 อัน |
+| `/posts/1` | โพสต์เดียว (id=1) |
+| `/users` | User 10 คน |
+| `/comments` | Comment 500 อัน |
+| `/todos` | To-do 200 อัน |
+| `/albums`, `/photos` | อัลบั้ม + รูป |
+
+### 2.4 JSON — ภาษากลางของ API
 **JSON (JavaScript Object Notation)** = รูปแบบข้อมูลที่ API ใช้
 
+ตัวอย่างจาก `https://jsonplaceholder.typicode.com/posts/1`:
 ```json
 {
-  "city": "Bangkok",
-  "temperature": 32,
-  "weather": "Sunny",
-  "humidity": 65,
-  "forecast": [
-    { "day": "Mon", "temp": 33 },
-    { "day": "Tue", "temp": 31 }
-  ]
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident",
+  "body": "quia et suscipit suscipit recusandae..."
 }
 ```
 
 **โครงสร้าง:**
 - `{ ... }` = Object (กล่องเก็บข้อมูล)
 - `"key": value` = คู่ของชื่อ + ค่า
-- `[ ... ]` = Array (รายการ)
+- `[ ... ]` = Array (รายการ — เช่น `/posts` ส่งกลับมาเป็น array ของ object)
 
-> 💡 **อ่านออกพอ:** ไม่ต้องเขียน — แค่รู้ว่า `data.temperature` หมายถึง "ดึงค่า temperature ออกมาจากกล่อง data"
-
-### 2.4 API Key — กุญแจเข้าถึง
-- บริการ API ส่วนใหญ่ต้องสมัครเพื่อรับ **API Key** (ฟรีในระดับเริ่มต้น)
-- API Key = รหัสประจำตัวที่บอกว่า "เป็นใคร" — ห้ามแชร์ ห้าม commit เข้า Git
-- เก็บใน **Environment Variable** (`.env`) แทน
+> 💡 **อ่านออกพอ:** ไม่ต้องเขียน — แค่รู้ว่า `data.title` หมายถึง "ดึงค่า title ออกมาจากกล่อง data"
 
 ### 2.5 fetch() — คำสั่ง JS ที่ใช้คุยกับ API
 ตัวอย่าง (อ่านพอ ไม่ต้องเขียน):
 ```javascript
-const response = await fetch('https://api.weather.com/...');
+const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
 const data = await response.json();
-console.log(data.temperature);  // 32
+console.log(data.title);  // "sunt aut facere repellat provident"
 ```
 
 > 💡 **AI จะเขียนให้:** เราแค่บอก AI ว่า "ดึงข้อมูลจาก API นี้ แล้วเอามาแสดง" — AI จะเขียน fetch ให้
+
+### 2.6 Mini Workshop: ดึง Post จาก JSONPlaceholder
+สั่ง AI ในโปรเจกต์ React ของเรา:
+> *"สร้างหน้าใหม่ใน React ที่:*
+> *- ดึงข้อมูลโพสต์ทั้งหมดจาก `https://jsonplaceholder.typicode.com/posts`*
+> *- แสดงเป็นการ์ดสวยๆ ด้วย Tailwind — title + body ของแต่ละโพสต์*
+> *- มีช่อง search กรองตาม title*
+> *- ใช้ useEffect ดึงข้อมูลตอน mount + useState เก็บผลลัพธ์"*
+
+> 📌 **ทำไมเริ่มจาก JSONPlaceholder?** เพราะ **ไม่ต้องสมัคร ไม่ต้อง API Key** — ลองได้ทันที พอเข้าใจหลักการ fetch แล้วค่อยไปต่อ Google APIs ที่ต้องลงทะเบียน
+
+### 2.7 API Key — กุญแจเข้าถึง (ใช้ตอน API จริง)
+- บริการ API ส่วนใหญ่ (เช่น Google APIs ในส่วนถัดไป) ต้องสมัครเพื่อรับ **API Key**
+- API Key = รหัสประจำตัวที่บอกว่า "เป็นใคร" — ห้ามแชร์ ห้าม commit เข้า Git
+- เก็บใน **Environment Variable** (`.env`) แทน
 
 ---
 
