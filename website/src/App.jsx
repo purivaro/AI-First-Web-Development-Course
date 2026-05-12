@@ -349,22 +349,30 @@ function App() {
                 />
               </div>
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">External APIs & Intro to RAG</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">External APIs, Google & LINE Integration</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  เชื่อมต่อโลกภายนอกผ่าน API และก้าวสู่อนาคตด้วย <strong>RAG (Retrieval-Augmented Generation)</strong> เพื่อสร้าง Custom AI Chatbot ของตัวเอง
+                  เชื่อมเว็บแอปของเรากับโลกภายนอกผ่าน <strong className="text-primary-cyan font-normal">API + LLM + Google APIs + LINE OA</strong> — ช่องทางที่คนไทยใช้กันจริงในชีวิตประจำวัน
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ปูพื้นฐาน API และ JSON แบบเข้าใจง่าย ดึงข้อมูลระดับโลกมาไว้ที่เว็บเรา</p>
+                    <p className="text-[#e3e2e2]">ปูพื้นฐาน <span className="text-primary-cyan">API + JSON</span> และดึงข้อมูล API สาธารณะ (Weather App)</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">เรียนรู้แนวคิด RAG เบื้องต้น ทำให้ AI ตอบคำถามได้ตรงจุดจากเอกสารส่วนตัว</p>
+                    <p className="text-[#e3e2e2]">ใส่ <span className="text-primary-cyan">AI (Claude/GPT)</span> ลงในเว็บผ่าน LLM API + System Prompt</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">สร้างผลงาน AI Assistant ที่ทำงานอยู่บนหน้าเว็บของเราเอง</p>
+                    <p className="text-[#e3e2e2]"><span className="text-primary-cyan">Google APIs</span> — Maps, Calendar, Sheets เป็น DB ง่ายๆ</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]"><span className="text-primary-cyan">LINE OA + Webhook + LIFF</span> — เชื่อมเว็บกับ LINE สำหรับงานคนไทย</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
+                    <p className="text-[#e3e2e2]">รู้จัก <span className="text-primary-cyan">RAG</span> + เส้นทางศึกษาต่อเองด้วย NotebookLM / Claude Projects</p>
                   </div>
                 </div>
                 <div className="mt-8">
