@@ -356,7 +356,7 @@ function App() {
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ปูพื้นฐาน <span className="text-primary-cyan">API + JSON</span> และดึงข้อมูล API สาธารณะ (Weather App)</p>
+                    <p className="text-[#e3e2e2]">ปูพื้นฐาน <span className="text-primary-cyan">API + JSON</span> เข้าใจวิธีดึงข้อมูลจากบริการภายนอก</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
