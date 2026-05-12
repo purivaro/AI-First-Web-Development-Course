@@ -1,4 +1,4 @@
-# 🌐 คู่มือประกอบการเรียน Session 5 — External APIs & Intro to RAG
+# 🌐 คู่มือประกอบการเรียน Session 5 — External APIs, Google & LINE Integration
 *(ฉบับอ่านทำความเข้าใจด้วยตัวเองและใช้สอนได้ทันที)*
 
 > **ระยะเวลา:** 2 ชั่วโมง 45 นาที
