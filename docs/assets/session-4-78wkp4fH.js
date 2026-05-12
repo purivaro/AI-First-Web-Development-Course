@@ -44,15 +44,44 @@ var e=`# 🌐 คู่มือประกอบการเรียน Sessi
 ## 🔌 ส่วนที่ 2 — API คืออะไร + JSON พื้นฐาน
 *(25 นาที)*
 
-### 2.1 API คืออะไร? (อธิบายแบบบ้านๆ)
-**API (Application Programming Interface)** = "เมนูในร้านอาหาร"
-- ร้านอาหารไม่ให้ลูกค้าเข้าครัวเอง → มีเมนูให้สั่ง
-- API คือ "เมนู" ที่บริการต่างๆ เปิดให้โปรแกรมของเราสั่งข้อมูลได้
+### 2.1 API คืออะไร?
+
+**คำนิยามทางเทคนิค:**
+> **API (Application Programming Interface)** = ชุดของกฎและช่องทางที่บริการหนึ่งกำหนดไว้ ให้โปรแกรมอื่นเรียกใช้งานฟีเจอร์หรือดึงข้อมูลได้ โดยไม่ต้องรู้ว่าภายในทำงานยังไง
+
+พูดอีกแบบ: API เป็น **"สัญญา"** ระหว่างคน 2 ฝั่ง — ผู้ให้บริการบอกว่า "ถ้าส่งมาแบบนี้ ฉันจะส่งกลับแบบนี้" และผู้ใช้แค่ทำตามสัญญาก็ใช้งานได้
+
+**เปรียบเทียบแบบบ้านๆ:** API = "เมนูในร้านอาหาร"
+- ลูกค้าไม่ได้เข้าครัวเอง → ดูเมนู → สั่ง → ครัวทำให้
+- เราไม่ต้องรู้ว่าครัวทำยังไง — แค่รู้ว่าสั่งอะไรได้ และจะได้อะไรกลับมา
+
+---
+
+**API ทำงานยังไง? (3 ขั้น)**
+
+1. **Client ส่ง Request** — โปรแกรมของเราเรียก URL ของ API พร้อมระบุว่าอยากได้อะไร
+   \`\`\`
+   GET https://jsonplaceholder.typicode.com/posts/1
+   \`\`\`
+
+2. **Server ประมวลผล** — API server รับคำขอ → ค้นข้อมูลจาก database → จัดรูปเป็น JSON
+
+3. **Server ส่ง Response กลับ** — เป็นข้อความ JSON ที่อ่านง่าย ทั้ง 2 ฝั่งเข้าใจตรงกัน
+   \`\`\`json
+   { "id": 1, "title": "...", "body": "..." }
+   \`\`\`
+
+> 🔗 **ทำไมต้องเป็น JSON?** เพราะ JSON เป็น **ภาษากลาง** ที่ทุกภาษาโปรแกรม (JavaScript, Python, PHP, Java, ...) อ่านและแปลเป็นข้อมูลในโปรแกรมตัวเองได้ — เลยกลายเป็นมาตรฐานของ API เกือบทุกตัวในโลก (รายละเอียดในส่วน 2.4)
+
+---
 
 **ตัวอย่างที่เจอทุกวัน:**
-- เว็บพยากรณ์อากาศ → ดึงข้อมูลจาก API ของกรมอุตุฯ
-- App Grab → ดึงตำแหน่งจาก Google Maps API
-- ChatGPT app → ส่ง message ไป OpenAI API แล้วได้ response กลับ
+- 🌦️ **เว็บพยากรณ์อากาศ** → ดึง JSON จาก API ของกรมอุตุฯ → แสดงเป็นกราฟ
+- 🚗 **App Grab** → เรียก Google Maps API → ได้พิกัด+เส้นทางเป็น JSON → วาดบนแผนที่
+- 💬 **ChatGPT app** → ส่งข้อความเป็น JSON ไป OpenAI API → ได้คำตอบเป็น JSON กลับมา → แสดง
+- 📲 **LINE OA** → user พิมพ์ → LINE ส่ง JSON มาที่ webhook ของเรา → เราตอบกลับเป็น JSON
+
+> 💡 **สรุป:** ทุกแอปบนโลก = **โปรแกรมของเราคุยกับ API ของคนอื่นผ่าน JSON** — เข้าใจ pattern นี้ = เข้าใจวงการ web ทั้งหมด
 
 ### 2.2 โครงสร้างการคุยกับ API
 \`\`\`
@@ -243,14 +272,111 @@ console.log(data.title);  // "sunt aut facere repellat provident"
 - **Messaging API** = ช่องทางให้โปรแกรมของเราส่งและรับข้อความผ่าน OA — เปิดที่ [LINE Developers Console](https://developers.line.biz)
 - **ได้:** Channel Access Token (สำหรับส่งข้อความ) + Channel Secret (สำหรับยืนยันว่าข้อความมาจาก LINE จริง)
 
-### 4.3 Webhook คืออะไร
+### 4.3 Messaging API: ส่งข้อความอะไรได้บ้าง?
+
+**3 วิธีที่โปรแกรมเราคุยกับ user:**
+
+| วิธี | ใช้เมื่อ | จ่ายเงินตอนไหน |
+|---|---|---|
+| **Reply API** | ตอบกลับทันทีหลัง user ทักมา (ภายใน ~30 นาที) | **ฟรีไม่จำกัด** |
+| **Push API** | ส่งหา user คนเดียวเมื่อไหร่ก็ได้ (เช่น แจ้งเตือน) | นับ quota |
+| **Broadcast** | ส่งให้ผู้ติดตามทุกคนพร้อมกัน | นับ quota หนัก |
+
+> 💡 **เคล็ดลับ:** ออกแบบให้ใช้ **Reply API ให้มากที่สุด** เพราะฟรี — ส่ง Push/Broadcast เฉพาะตอนสำคัญจริงๆ
+
+---
+
+**8 ประเภท Message ที่ส่งได้ (รู้จักก่อนเลือกใช้):**
+
+| ประเภท | ใช้ทำอะไร | ตัวอย่างในงานวัด/โรงเรียน |
+|---|---|---|
+| **Text** | ข้อความตัวอักษร (รองรับ emoji) | "งานบุญพรุ่งนี้เริ่ม 9:00 น." |
+| **Sticker** | ส่งสติกเกอร์ LINE | สวัสดี / ขอบคุณ |
+| **Image** | รูปภาพ (JPG/PNG, ≤10MB) | โปสเตอร์งาน, ใบอนุโมทนา |
+| **Video** | คลิปวิดีโอ (MP4) | คลิปบทเทศน์, รีวิวงาน |
+| **Audio** | ไฟล์เสียง (M4A) | บทสวด, ธรรมะเสียง |
+| **Location** | ปักหมุดสถานที่ | ที่ตั้งวัด — กดเปิดแผนที่ได้เลย |
+| **Imagemap** | รูปใหญ่ที่กดแต่ละจุดได้ | แผนผังวัด, เมนูแบบรูปภาพ |
+| **Flex Message** ⭐ | การ์ด UI สวยๆ ปรับ layout ได้อิสระ | ใบอนุโมทนา, รายการกิจกรรม, ใบเสร็จ |
+
+---
+
+**🎨 Flex Message — พระเอกของ LINE Messaging**
+
+Flex Message คือ "การ์ดที่ออกแบบเองได้" — เหมือนมินิเว็บอยู่ในข้อความ ใส่รูป + ปุ่ม + ลิงก์ได้ ใช้ JSON อธิบายโครงสร้าง
+
+ตัวอย่าง JSON ของใบอนุโมทนา:
+\`\`\`json
+{
+  "type": "flex",
+  "altText": "อนุโมทนาบุญ",
+  "contents": {
+    "type": "bubble",
+    "hero": { "type": "image", "url": "https://..." },
+    "body": {
+      "type": "box", "layout": "vertical",
+      "contents": [
+        { "type": "text", "text": "อนุโมทนาบุญ", "weight": "bold", "size": "xl" },
+        { "type": "text", "text": "คุณได้ร่วมบริจาค 500 บาท" }
+      ]
+    },
+    "footer": {
+      "type": "box", "layout": "vertical",
+      "contents": [
+        { "type": "button", "action": { "type": "uri", "label": "ดูใบเสร็จ", "uri": "https://..." }}
+      ]
+    }
+  }
+}
+\`\`\`
+
+> 🛠️ **เครื่องมือออกแบบ:** [Flex Message Simulator](https://developers.line.biz/flex-simulator/) — ลากวางได้แบบ Figma แล้ว copy JSON ไปใช้
+> หรือสั่ง AI: *"สร้าง Flex Message JSON สำหรับใบอนุโมทนา มีรูป, ชื่อผู้บริจาค, จำนวนเงิน, ปุ่มดูใบเสร็จ"*
+
+---
+
+**🧩 ลูกเล่นเพิ่มเติม (มาคู่กับ Message ได้):**
+
+| Feature | คืออะไร | ตัวอย่าง |
+|---|---|---|
+| **Quick Reply** | ปุ่มลัดใต้ข้อความ ให้ user กดเลือกแทนพิมพ์ | "เลือกประเภทการลา: ลาป่วย / ลากิจ / ลาพักร้อน" |
+| **Rich Menu** | เมนูใหญ่ที่ติดด้านล่างจอแชท | 6 ปุ่ม: ปฏิทิน / บริจาค / ติดต่อ / แผนที่ / FAQ / LIFF |
+| **Postback Action** | ปุ่มที่กดแล้วส่งข้อมูลกลับ webhook (ไม่โชว์ใน chat) | กด "ยืนยัน" → webhook รู้ว่า user ตอบอะไร |
+| **URI Action** | ปุ่มเปิดเว็บ/LIFF | กด "ลงทะเบียน" → เปิด form |
+| **Datetime Picker** | ให้ user เลือกวันเวลา | เลือกวันจองที่พัก |
+
+---
+
+**📤 ตัวอย่างการส่ง Reply API จาก backend:**
+\`\`\`javascript
+// POST https://api.line.me/v2/bot/message/reply
+{
+  "replyToken": "xxxxx",  // ได้มาจาก webhook
+  "messages": [
+    { "type": "text", "text": "สวัสดีครับ 🙏" },
+    { "type": "sticker", "packageId": "446", "stickerId": "1988" }
+  ]
+}
+\`\`\`
+- ส่งได้สูงสุด **5 messages** ต่อ 1 reply
+- ต้องใช้ \`replyToken\` ภายใน ~30 นาทีหลังได้มา ไม่งั้น expire
+
+---
+
+**💰 Quota & ข้อจำกัด (ที่ควรรู้ก่อนใช้):**
+- **Reply API:** ฟรีไม่จำกัด
+- **Push/Broadcast:** Free plan = 200 ข้อความ/เดือน, Light = 5,000, Standard = 30,000
+- ขนาดไฟล์: รูป ≤10MB, วิดีโอ ≤200MB
+- ข้อความ text: สูงสุด 5,000 ตัวอักษรต่อข้อความ
+
+### 4.4 Webhook คืออะไร
 **Webhook** = URL ที่บริการอื่นเรียกหาเราเมื่อมีเหตุการณ์เกิด — **ตรงข้ามกับ API ปกติ**
 - **API ปกติ:** เราเรียกหาเค้า (Pull)
 - **Webhook:** เค้าเรียกหาเรา (Push)
 
 **ตัวอย่าง:** ผู้ใช้พิมพ์ใน LINE → LINE ส่ง \`POST\` request มาที่ Webhook URL ของเรา → เราตอบกลับด้วย Reply API
 
-### 4.4 สถาปัตยกรรม LINE OA + Web App
+### 4.5 สถาปัตยกรรม LINE OA + Web App
 \`\`\`
 User           LINE              Our Backend         Our Web/DB
  │              │                      │                  │
@@ -262,7 +388,7 @@ User           LINE              Our Backend         Our Web/DB
  │<── reply ────│                      │                  │
 \`\`\`
 
-### 4.5 Use Cases ในวัด / โรงเรียน / ศูนย์ปฏิบัติธรรม
+### 4.6 Use Cases ในวัด / โรงเรียน / ศูนย์ปฏิบัติธรรม
 | Use Case | กลไก |
 |---|---|
 | **ส่งแจ้งเตือนงานบุญ** ถึงผู้ติดตาม | Broadcast หรือ Push API |
@@ -272,13 +398,13 @@ User           LINE              Our Backend         Our Web/DB
 | **ดูปฏิทินกิจกรรม** ผ่าน LINE | Rich Menu + LIFF |
 | **AI Chatbot ใน LINE** (รับคำถามแล้วใช้ Claude/GPT ตอบ) | Webhook + LLM API |
 
-### 4.6 LIFF — เว็บแอปของเรารันใน LINE ได้
+### 4.7 LIFF — เว็บแอปของเรารันใน LINE ได้
 **LIFF (LINE Front-end Framework)** = ฝังเว็บที่เราสร้างไว้แล้วใน LINE app ได้ทันที
 - User คลิกลิงก์ใน LINE → เปิดเว็บภายใน LINE (ไม่ออกไปเบราว์เซอร์)
 - เว็บได้ข้อมูล User ID จาก LINE → ผูกข้อมูลกับ profile ผู้ใช้ได้
 - **เหมาะกับ:** ฟอร์มลงทะเบียน, แสดง Dashboard, ระบบจองที่พัก
 
-### 4.7 Prompt ตัวอย่าง: สร้าง LINE Bot เบื้องต้น
+### 4.8 Prompt ตัวอย่าง: สร้าง LINE Bot เบื้องต้น
 > *"ฉันมี LINE OA + Channel Access Token + Channel Secret แล้ว ช่วยสร้าง Webhook endpoint บน Vercel Serverless Function ที่:*
 > *- รับข้อความจาก LINE Messaging API*
 > *- ถ้าผู้ใช้พิมพ์ 'ลงทะเบียน' → reply กลับด้วยลิงก์ฟอร์ม LIFF*
@@ -287,14 +413,14 @@ User           LINE              Our Backend         Our Web/DB
 > *- ใช้ Node.js + LINE Bot SDK (\`@line/bot-sdk\`)*
 > *- บอกขั้นตอนการตั้งค่า Webhook URL ใน LINE Developers Console ให้ฉันด้วย"*
 
-### 4.8 ขั้นตอน Setup คร่าวๆ
+### 4.9 ขั้นตอน Setup คร่าวๆ
 1. สร้าง **LINE OA** ที่ Official Account Manager
 2. เปิด **Messaging API** ใน Developers Console → ได้ Channel Access Token
 3. Deploy Webhook ที่ **Vercel** (หรือ Cloudflare Workers / Supabase Edge Functions)
 4. กลับมาที่ Developers Console → ใส่ Webhook URL → กด Verify
 5. ทดสอบโดยพิมพ์ใน LINE OA
 
-### 4.9 แหล่งศึกษาต่อ
+### 4.10 แหล่งศึกษาต่อ
 - **[LINE Developers](https://developers.line.biz/)** — official docs (มีภาษาไทยบางส่วน)
 - **[LINE Developers Thailand](https://www.facebook.com/groups/linedeveloperth)** (Facebook Group) — ชุมชนไทย ถามตอบเร็ว
 - **LINE API Expert** — ค้น YouTube "LINE OA ภาษาไทย" จะเจอคลิปสอนเยอะ
@@ -316,7 +442,7 @@ User           LINE              Our Backend         Our Web/DB
 ### 5.2 ภารกิจในห้องเรียน
 - [ ] สมัคร API Key: Google Cloud + LINE Developers
 - [ ] เลือก 1 Google API mini-walkthrough (Maps / Calendar / Sheets) → ทำในโปรเจกต์ของตัวเอง
-- [ ] สร้าง LINE OA + Webhook ที่ตอบ keyword ได้ (ส่วน 4.7)
+- [ ] สร้าง LINE OA + Webhook ที่ตอบ keyword ได้ (ส่วน 4.8)
 - [ ] Deploy Webhook ขึ้น Vercel (ระวัง! อย่า commit API Key)
 
 ### 5.3 การบ้าน
