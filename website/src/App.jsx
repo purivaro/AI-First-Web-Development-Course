@@ -349,7 +349,7 @@ function App() {
                 />
               </div>
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">External APIs, Google & LINE Integration</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">Connecting to Google & LINE APIs</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
                   เชื่อมเว็บแอปของเรากับโลกภายนอกผ่าน <strong className="text-primary-cyan font-normal">API + Google APIs + LINE OA</strong> — ช่องทางที่คนไทยใช้กันจริงในชีวิตประจำวัน
                 </p>

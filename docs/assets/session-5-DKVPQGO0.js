@@ -1,4 +1,4 @@
-var e=`# 🌐 คู่มือประกอบการเรียน Session 5 — External APIs, Google & LINE Integration
+var e=`# 🌐 คู่มือประกอบการเรียน Session 5 — Connecting to Google & LINE APIs
 *(ฉบับอ่านทำความเข้าใจด้วยตัวเองและใช้สอนได้ทันที)*
 
 > **ระยะเวลา:** 2 ชั่วโมง 45 นาที
