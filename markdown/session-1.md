@@ -128,7 +128,7 @@
 
 ผลที่ได้: ผลลัพธ์ตรงเป้า ใช้งานได้จริง ไม่ต้องแก้เยอะ
 
-> 📌 Framework เต็มรูปแบบ (Context / Goal / Constraints / Files / Workflow) เราจะลงลึกใน Session 4
+> 📌 Framework เต็มรูปแบบ (Context / Goal / Constraints / Files / Workflow) เราจะลงลึกใน Session 5
 
 ### 3.3 ศิลปะการตั้งคำถามกลับ (Clarifying Questions)
 เคล็ดลับสำคัญ: **ก่อนให้ AI ทำงาน ให้ AI ถามกลับเราก่อน**

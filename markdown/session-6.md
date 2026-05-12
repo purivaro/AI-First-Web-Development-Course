@@ -107,7 +107,7 @@ UI (หน้าตาที่ให้ user กรอก/ดู)
 *(30 นาที)*
 
 ### 3.1 เขียน `requirements.md` (20 นาที)
-ใช้ template จาก Session 4:
+ใช้ template จาก Session 5:
 
 ```markdown
 # [ชื่อโปรเจกต์]

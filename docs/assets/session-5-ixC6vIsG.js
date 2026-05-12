@@ -1,8 +1,8 @@
-var e=`# 🧠 คู่มือประกอบการเรียน Session 4 — From Problem to Product: System Design with AI
+var e=`# 🧠 คู่มือประกอบการเรียน Session 5 — From Problem to Product: System Design with AI
 *(ฉบับอ่านทำความเข้าใจด้วยตัวเองและใช้สอนได้ทันที)*
 
 > **ระยะเวลา:** 2 ชั่วโมง 45 นาที
-> **กลุ่มเป้าหมาย:** ผู้เรียนที่ผ่าน Session 1-3 มาแล้ว (สร้าง Web App ที่มี DB ได้)
+> **กลุ่มเป้าหมาย:** ผู้เรียนที่ผ่าน Session 1-4 มาแล้ว (สร้าง Web App ที่มี DB + เชื่อม Google/LINE APIs ได้)
 > **เป้าหมายหลักเมื่อจบคาบ:** คิดเป็น **Product Designer** ไม่ใช่แค่คนสั่ง AI เขียนโค้ด — รู้จัก **Agent Framework** ในการ brief AI, ใช้ **Backward Design** ออกแบบจากปลายทาง, ใช้หลัก **เล็ง-ยิง-ปรับ** ในการพัฒนา, และมี **วิธีอัปเดตความรู้/เครื่องมือ AI** ใหม่ๆ ตลอดเวลา
 
 > 💡 **แนวคิดหลัก:** เครื่องมือเปลี่ยนทุก 3-6 เดือน — แต่ **"หลักคิด"** และ **"ทักษะการหาความรู้ใหม่"** อยู่กับเราตลอด
@@ -13,7 +13,7 @@ var e=`# 🧠 คู่มือประกอบการเรียน Sessi
 
 | ช่วง | เวลาโดยประมาณ | เนื้อหาหลัก |
 |---|---|---|
-| 1 | 0:00 – 0:10 | ทบทวน Session 1-3 + เปิดประเด็น "คิดเป็น Product Designer" |
+| 1 | 0:00 – 0:10 | ทบทวน Session 1-4 + เปิดประเด็น "คิดเป็น Product Designer" |
 | 2 | 0:10 – 0:35 | **Agent Framework** — 5 องค์ประกอบของการ brief AI |
 | 3 | 0:35 – 0:55 | **Backward Design** — เริ่มจาก Output ย้อนสู่ Input |
 | 4 | 0:55 – 1:10 | **เล็ง-ยิง-ปรับ** — MVP + Iteration Loop |
@@ -28,10 +28,11 @@ var e=`# 🧠 คู่มือประกอบการเรียน Sessi
 ## 🎯 ส่วนที่ 1 — ทบทวน & เปิดประเด็น
 *(10 นาที)*
 
-### 1.1 ทบทวน 3 คาบที่ผ่านมา
+### 1.1 ทบทวน 4 คาบที่ผ่านมา
 - **S1:** Agent mindset + Markdown + Git/Deploy
 - **S2:** Design System + Stitch + React intro + Debugging
 - **S3:** State + Database + CRUD + Dashboard
+- **S4:** Google APIs (Maps/Calendar/Sheets) + LINE OA + Webhook
 
 ตอนนี้ทุกคน "สร้าง Web App ได้" แล้ว — แต่จะสร้าง **อะไร**? และสร้าง **ทำไม**?
 
@@ -199,7 +200,7 @@ Report/Output → Process → Input
 | **LLM** (Large Language Model) | สมองของ AI เช่น GPT, Claude, Gemini |
 | **Agent** | AI ที่ทำงานเป็นชุดเองได้ (ไม่ใช่แค่ตอบคำถาม) |
 | **MCP** (Model Context Protocol) | Protocol เชื่อม AI กับเครื่องมือต่างๆ (เรียนใน S2) |
-| **RAG** (Retrieval-Augmented Generation) | ให้ AI ตอบจากข้อมูลของเราเอง (จะเรียนใน S5) |
+| **RAG** (Retrieval-Augmented Generation) | ให้ AI ตอบจากข้อมูลของเราเอง (เรียนเพิ่มเองได้ — ดู NotebookLM / Claude Projects) |
 | **Fine-tuning** | สอน AI ให้เก่งงานเฉพาะทาง |
 | **Tool Use / Function Calling** | AI เรียกใช้เครื่องมือ/API เองได้ |
 | **Multi-modal** | AI ที่เข้าใจรูป + เสียง + ข้อความ |
@@ -376,7 +377,7 @@ Report/Output → Process → Input
 - **Output:** หน้ารวมบทเทศน์ที่ค้นหาได้, แยกตามหัวข้อ/ผู้แสดงธรรม, สถิติยอดเข้าชม
 - **Process:** full-text search + filter by tags + count views
 - **Input:** ฟอร์มเพิ่มบทเทศน์ {ชื่อเรื่อง, ผู้แสดง, วันที่, หัวข้อ (tag), ไฟล์เสียง/วิดีโอ/บทถอด}
-- **เพิ่มได้:** ใส่ AI ตอบคำถามจากบทเทศน์ (RAG — เรียนใน S5!)
+- **เพิ่มได้:** ใส่ AI ตอบคำถามจากบทเทศน์ (RAG — ลองใช้ NotebookLM / Claude Projects ก่อน)
 
 ---
 
@@ -415,7 +416,7 @@ Report/Output → Process → Input
 1. **เลือก 1 Tool ที่ไม่เคยใช้** จากตารางในส่วนที่ 6.4 → ลองตาม Tool Evaluation Protocol (ส่วน 6.6)
 2. **เขียน \`requirements.md\`** สำหรับโปรเจกต์งานจริงของตัวเอง (ใช้ Backward Design)
 3. **สมัคร 1 Newsletter หรือ Follow 3 Account Twitter** จากส่วน 6.5
-4. **เตรียมตัวคาบหน้า (S5):** API + RAG — สอน AI ตอบจากข้อมูลของเราเอง
+4. **เตรียมตัวคาบหน้า (S6 - Final Project):** เลือกหัวข้อโปรเจกต์ที่จะทำ + ร่าง \`requirements.md\` มา
 
 ---
 

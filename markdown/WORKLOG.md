@@ -14,8 +14,8 @@
 | 1 | **Build & Deploy Your First Webpage with AI** | Agent mindset + Markdown + Git/Deploy |
 | 2 | **Designing & Debugging Interactive UI with AI** | UI Design (Stitch + MCP) + AI Debugging |
 | 3 | **Building Database-Driven Web Apps with AI** | State + Logic + Database + CRUD + Dashboard |
-| 4 | **From Problem to Product — System Design with AI** | Agent Framework + Backward Design + Case Studies |
-| 5 | **External APIs & Intro to RAG** | API + RAG (ยังไม่ได้ปรับใหม่) |
+| 4 | **Connecting to Google & LINE APIs** | API + JSON + Google APIs (Maps/Calendar/Sheets) + LINE OA + Webhook + LIFF |
+| 5 | **From Problem to Product — System Design with AI** | Agent Framework + Backward Design + Case Studies + AI Tool Update |
 | 6 | **Final Project: AI-Powered Web/App Development** | โปรเจกต์จริง + Deploy + Present |
 
 ---

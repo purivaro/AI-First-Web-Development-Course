@@ -294,23 +294,22 @@ function App() {
           <section className="glass-panel glass-panel-hover transition-all duration-300">
             <div className="grid md:grid-cols-12 h-full">
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center order-2 md:order-1 border-r border-border-glass">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">From Problem to Product — System Design with AI</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">Connecting to Google & LINE APIs</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  คิดเป็น <strong className="text-primary-cyan font-normal">Product Designer</strong> ไม่ใช่แค่คนสั่ง AI เขียนโค้ด —
-                  ออกแบบ solution ให้ตอบโจทย์งานจริงด้วย Backward Design และ Agent Framework
+                  เชื่อมเว็บแอปของเรากับโลกภายนอกผ่าน <strong className="text-primary-cyan font-normal">API + Google APIs + LINE OA</strong> — ช่องทางที่คนไทยใช้กันจริงในชีวิตประจำวัน
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">Agent Framework: <span className="text-primary-cyan">Context · Goal · Constraints · Files · Workflow</span></p>
+                    <p className="text-[#e3e2e2]">ปูพื้นฐาน <span className="text-primary-cyan">API + JSON</span> เข้าใจวิธีดึงข้อมูลจากบริการภายนอก</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">Backward Design + Workflow: <span className="text-primary-cyan">Research → Plan → Generate → Review</span></p>
+                    <p className="text-[#e3e2e2]"><span className="text-primary-cyan">Google APIs</span> — Maps, Calendar, Sheets เป็น DB ง่ายๆ</p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">Case Studies จากงานจริง: HR, ขาย, ครู, ร้านค้า — เล็ง · ยิง · ปรับ</p>
+                    <p className="text-[#e3e2e2]"><span className="text-primary-cyan">LINE OA + Webhook + LIFF</span> — เชื่อมเว็บกับ LINE สำหรับงานคนไทย</p>
                   </div>
                 </div>
                 <div className="mt-8">
@@ -349,22 +348,23 @@ function App() {
                 />
               </div>
               <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-3xl font-bold text-white mb-6">Connecting to Google & LINE APIs</h3>
+                <h3 className="font-display text-3xl font-bold text-white mb-6">From Problem to Product — System Design with AI</h3>
                 <p className="text-[#b9cacb] mb-8 leading-relaxed font-body">
-                  เชื่อมเว็บแอปของเรากับโลกภายนอกผ่าน <strong className="text-primary-cyan font-normal">API + Google APIs + LINE OA</strong> — ช่องทางที่คนไทยใช้กันจริงในชีวิตประจำวัน
+                  คิดเป็น <strong className="text-primary-cyan font-normal">Product Designer</strong> ไม่ใช่แค่คนสั่ง AI เขียนโค้ด —
+                  ออกแบบ solution ให้ตอบโจทย์งานจริงด้วย Backward Design และ Agent Framework
                 </p>
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">ปูพื้นฐาน <span className="text-primary-cyan">API + JSON</span> เข้าใจวิธีดึงข้อมูลจากบริการภายนอก</p>
+                    <p className="text-[#e3e2e2]">Agent Framework: <span className="text-primary-cyan">Context · Goal · Constraints · Files · Workflow</span></p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]"><span className="text-primary-cyan">Google APIs</span> — Maps, Calendar, Sheets เป็น DB ง่ายๆ</p>
+                    <p className="text-[#e3e2e2]">Backward Design + Workflow: <span className="text-primary-cyan">Research → Plan → Generate → Review</span></p>
                   </div>
                   <div className="flex items-start gap-4">
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]"><span className="text-primary-cyan">LINE OA + Webhook + LIFF</span> — เชื่อมเว็บกับ LINE สำหรับงานคนไทย</p>
+                    <p className="text-[#e3e2e2]">Case Studies จากงานจริง: วัด/โรงเรียน — เล็ง · ยิง · ปรับ</p>
                   </div>
                 </div>
                 <div className="mt-8">

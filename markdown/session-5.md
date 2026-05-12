@@ -1,11 +1,11 @@
-# 🌐 คู่มือประกอบการเรียน Session 5 — Connecting to Google & LINE APIs
+# 🧠 คู่มือประกอบการเรียน Session 5 — From Problem to Product: System Design with AI
 *(ฉบับอ่านทำความเข้าใจด้วยตัวเองและใช้สอนได้ทันที)*
 
 > **ระยะเวลา:** 2 ชั่วโมง 45 นาที
-> **กลุ่มเป้าหมาย:** ผู้เรียนที่ผ่าน Session 1-4 มาแล้ว
-> **เป้าหมายหลักเมื่อจบคาบ:** เข้าใจหลักการ **API** + **JSON**, ดึงข้อมูลจากบริการภายนอกมาใช้ในเว็บได้, รู้จัก **Google APIs** (Maps / Calendar / Sheets) ที่ใช้บ่อยที่สุดในการทำงานจริง, และเชื่อม **LINE OA + Webhook + LIFF** กับเว็บแอปได้
+> **กลุ่มเป้าหมาย:** ผู้เรียนที่ผ่าน Session 1-4 มาแล้ว (สร้าง Web App ที่มี DB + เชื่อม Google/LINE APIs ได้)
+> **เป้าหมายหลักเมื่อจบคาบ:** คิดเป็น **Product Designer** ไม่ใช่แค่คนสั่ง AI เขียนโค้ด — รู้จัก **Agent Framework** ในการ brief AI, ใช้ **Backward Design** ออกแบบจากปลายทาง, ใช้หลัก **เล็ง-ยิง-ปรับ** ในการพัฒนา, และมี **วิธีอัปเดตความรู้/เครื่องมือ AI** ใหม่ๆ ตลอดเวลา
 
-> 💡 **แนวคิดหลัก:** เว็บแอปจะมีประโยชน์เต็มที่เมื่อมัน "คุยกับโลกภายนอก" ได้ — ทั้งข้อมูลจาก API และผู้ใช้ผ่านช่องทางที่พวกเขาใช้อยู่จริง
+> 💡 **แนวคิดหลัก:** เครื่องมือเปลี่ยนทุก 3-6 เดือน — แต่ **"หลักคิด"** และ **"ทักษะการหาความรู้ใหม่"** อยู่กับเราตลอด
 
 ---
 
@@ -13,187 +13,161 @@
 
 | ช่วง | เวลาโดยประมาณ | เนื้อหาหลัก |
 |---|---|---|
-| 1 | 0:00 – 0:10 | ทบทวน + เปิดประเด็น "เชื่อมเว็บกับโลกภายนอก" |
-| 2 | 0:10 – 0:35 | **API คืออะไร** + JSON พื้นฐาน |
-| 3 | 0:35 – 1:30 | **🌟 Google APIs** — Maps, Calendar, Sheets, Drive |
-| 4 | 1:30 – 1:40 | *พักเบรก* |
-| 5 | 1:40 – 2:30 | **🌟 LINE OA + Webhook** — เชื่อม LINE กับ Web App ของเรา |
-| 6 | 2:30 – 2:45 | สรุปบทเรียน & การบ้าน |
+| 1 | 0:00 – 0:10 | ทบทวน Session 1-4 + เปิดประเด็น "คิดเป็น Product Designer" |
+| 2 | 0:10 – 0:35 | **Agent Framework** — 5 องค์ประกอบของการ brief AI |
+| 3 | 0:35 – 0:55 | **Backward Design** — เริ่มจาก Output ย้อนสู่ Input |
+| 4 | 0:55 – 1:10 | **เล็ง-ยิง-ปรับ** — MVP + Iteration Loop |
+| 5 | 1:10 – 1:20 | *พักเบรก* |
+| 6 | 1:20 – 1:45 | **🌟 อัปเดตความรู้/เครื่องมือ AI ใหม่ๆ ตลอดเวลา** |
+| 7 | 1:45 – 2:15 | **Case Studies** — งานจริง 4 แบบ (HR / ขาย / ครู / ร้านค้า) |
+| 8 | 2:15 – 2:35 | Workshop — เลือก case ของตัวเอง + Backward Design |
+| 9 | 2:35 – 2:45 | สรุปบทเรียน & การบ้าน |
 
 ---
 
 ## 🎯 ส่วนที่ 1 — ทบทวน & เปิดประเด็น
 *(10 นาที)*
 
-### 1.1 ทบทวน Session 1-4
-- S1: Agent mindset + Deploy
-- S2: Design + React + Debugging
-- S3: State + Database + CRUD
-- S4: System Design + อัปเดตความรู้ตลอด
+### 1.1 ทบทวน 4 คาบที่ผ่านมา
+- **S1:** Agent mindset + Markdown + Git/Deploy
+- **S2:** Design System + Stitch + React intro + Debugging
+- **S3:** State + Database + CRUD + Dashboard
+- **S4:** Google APIs (Maps/Calendar/Sheets) + LINE OA + Webhook
 
-### 1.2 ข้อจำกัดของเว็บที่ผ่านมา
-- ใช้ได้แต่ข้อมูลที่ตัวเองใส่
-- ไม่มี AI อยู่ในเว็บ (มีแค่เราใช้ AI สร้างเว็บ)
-- ไม่สามารถดึงข้อมูลโลกภายนอก (สภาพอากาศ, ราคาหุ้น, ข่าว)
+ตอนนี้ทุกคน "สร้าง Web App ได้" แล้ว — แต่จะสร้าง **อะไร**? และสร้าง **ทำไม**?
 
-### 1.3 คาบนี้เปิดประตูใหม่ 2 บาน
-1. **Google APIs** — Maps / Calendar / Sheets / Drive ที่ใช้บ่อยที่สุดในงานจริง
-2. **LINE OA + Webhook** — ส่ง/รับข้อความผ่าน LINE ช่องทางที่คนไทยใช้ทุกวัน
+### 1.2 ปัญหา: เราเก่ง "สั่ง AI" แต่ยังไม่เก่ง "คิดโจทย์"
+- AI พร้อมเขียนโค้ดให้ — แต่ถ้าโจทย์ผิด ก็ได้แอปที่ไม่มีใครใช้
+- คนที่ "สั่ง AI เก่ง" ≠ "Product Designer ที่ดี"
+
+### 1.3 คาบนี้เน้น "หัว" ไม่ใช่ "มือ"
+- ออกแบบ Solution ก่อนเขียนโค้ด
+- รู้วิธีค้นหาและเลือกใช้เครื่องมือ AI ที่เหมาะกับปัญหา
+- คิดเป็น Product Designer
 
 ---
 
-## 🔌 ส่วนที่ 2 — API คืออะไร + JSON พื้นฐาน
+## 🎯 ส่วนที่ 2 — Agent Framework: 5 องค์ประกอบของการ Brief AI
 *(25 นาที)*
 
-### 2.1 API คืออะไร? (อธิบายแบบบ้านๆ)
-**API (Application Programming Interface)** = "เมนูในร้านอาหาร"
-- ร้านอาหารไม่ให้ลูกค้าเข้าครัวเอง → มีเมนูให้สั่ง
-- API คือ "เมนู" ที่บริการต่างๆ เปิดให้โปรแกรมของเราสั่งข้อมูลได้
+### 2.1 ทำไมต้องมี Framework?
+ใน S1 เราเรียน **Context / Goal / Constraints** มาแล้ว — แต่ตอนสั่งงานใหญ่จริงๆ 3 ข้อนี้ไม่พอ ต้องเพิ่ม **Files** และ **Workflow** ด้วย
 
-**ตัวอย่างที่เจอทุกวัน:**
-- เว็บพยากรณ์อากาศ → ดึงข้อมูลจาก API ของกรมอุตุฯ
-- App Grab → ดึงตำแหน่งจาก Google Maps API
-- ChatGPT app → ส่ง message ไป OpenAI API แล้วได้ response กลับ
+### 2.2 ทั้ง 5 องค์ประกอบ
+| องค์ประกอบ | คืออะไร | ตัวอย่าง |
+|---|---|---|
+| **Context** | กลุ่มเป้าหมาย, สถานการณ์ปัจจุบัน, ข้อมูลพื้นฐาน | "ทีม HR 5 คน ใช้ Excel อยู่ตอนนี้ ปัญหาคือเช็คยอดวันลาช้า" |
+| **Goal** | วัตถุประสงค์ + ผลลัพธ์ + ตัวชี้วัด | "ทำ Dashboard ให้เห็นยอดลาทันที — ลดเวลาเช็คจาก 30 นาที → 1 นาที" |
+| **Constraints** | เวลา, งบ, รูปแบบ, สิ่งต้องเลี่ยง | "ทำเสร็จใน 1 สัปดาห์, ใช้ React + Supabase, ห้ามมี login เพราะใช้ภายในเท่านั้น" |
+| **Files** | ไฟล์อ้างอิง, ตัวอย่าง, ข้อมูลประกอบ | "แนบไฟล์ Excel ตัวอย่าง 50 rows, screenshot Dashboard ที่ชอบ" |
+| **Workflow** | ลำดับขั้นตอน | "1) วิเคราะห์ข้อมูล Excel 2) วาง schema DB 3) สร้าง UI 4) ทดสอบ" |
 
-### 2.2 โครงสร้างการคุยกับ API
+### 2.3 Workflow มาตรฐาน: Research → Plan → Generate → Review
+สำหรับงานใหญ่ ให้ AI ทำเป็น 4 phase:
+1. **Research** — ให้ AI ค้นคว้า/วิเคราะห์ก่อน
+2. **Plan** — วางแผนเป็นขั้นตอน (ก่อนเริ่มทำ)
+3. **Generate** — ลงมือสร้างตามแผน
+4. **Review & Refine** — ตรวจสอบ + ปรับเป็นรอบๆ
+
+> 💡 **เคล็ดลับ:** อย่าให้ AI กระโดดจาก "เข้าใจปัญหา" → "เขียนโค้ด" เลย — บังคับให้ Plan ก่อนทุกครั้ง
+
+### 2.4 Prompt Template ที่ใช้ได้จริง
+```markdown
+## Context
+[กลุ่มเป้าหมาย + สถานการณ์]
+
+## Goal
+[เป้าหมาย + ตัวชี้วัด]
+
+## Constraints
+- Tech: [React + Vite + Tailwind + Supabase]
+- เวลา: [...]
+- ห้าม: [...]
+
+## Files
+[แนบไฟล์/ลิงก์]
+
+## Workflow
+1. Research: [...]
+2. Plan: ขอให้สรุปแผนก่อนเขียนโค้ด
+3. Generate: ทำตามแผน
+4. Review: ให้ฉันตรวจก่อนไป step ต่อไป
+
+**ก่อนเริ่ม:** ถ้ามีจุดไม่ชัด ให้ถามก่อน
 ```
-Client (เว็บเรา)  →  Request  →  API Server
-Client (เว็บเรา)  ←  Response ←  API Server
-```
-
-**Request (ส่งไป):**
-- URL: `https://api.openweathermap.org/data/2.5/weather?q=Bangkok`
-- Method: `GET` (ขอข้อมูล) หรือ `POST` (ส่งข้อมูลไปสร้าง)
-- Headers: ข้อมูลเพิ่ม เช่น API Key
-
-**Response (ได้กลับมา):** เป็น **JSON**
-
-### 2.3 JSON — ภาษากลางของ API
-**JSON (JavaScript Object Notation)** = รูปแบบข้อมูลที่ API ใช้
-
-```json
-{
-  "city": "Bangkok",
-  "temperature": 32,
-  "weather": "Sunny",
-  "humidity": 65,
-  "forecast": [
-    { "day": "Mon", "temp": 33 },
-    { "day": "Tue", "temp": 31 }
-  ]
-}
-```
-
-**โครงสร้าง:**
-- `{ ... }` = Object (กล่องเก็บข้อมูล)
-- `"key": value` = คู่ของชื่อ + ค่า
-- `[ ... ]` = Array (รายการ)
-
-> 💡 **อ่านออกพอ:** ไม่ต้องเขียน — แค่รู้ว่า `data.temperature` หมายถึง "ดึงค่า temperature ออกมาจากกล่อง data"
-
-### 2.4 API Key — กุญแจเข้าถึง
-- บริการ API ส่วนใหญ่ต้องสมัครเพื่อรับ **API Key** (ฟรีในระดับเริ่มต้น)
-- API Key = รหัสประจำตัวที่บอกว่า "เป็นใคร" — ห้ามแชร์ ห้าม commit เข้า Git
-- เก็บใน **Environment Variable** (`.env`) แทน
-
-### 2.5 fetch() — คำสั่ง JS ที่ใช้คุยกับ API
-ตัวอย่าง (อ่านพอ ไม่ต้องเขียน):
-```javascript
-const response = await fetch('https://api.weather.com/...');
-const data = await response.json();
-console.log(data.temperature);  // 32
-```
-
-> 💡 **AI จะเขียนให้:** เราแค่บอก AI ว่า "ดึงข้อมูลจาก API นี้ แล้วเอามาแสดง" — AI จะเขียน fetch ให้
 
 ---
 
-## 🌟 ส่วนที่ 3 — Google APIs: เครื่องมือที่ใช้บ่อยที่สุดในงานจริง
-*(55 นาที)*
+## 🔄 ส่วนที่ 3 — Backward Design: คิดจากปลายทาง
+*(20 นาที)*
 
-> 🎯 **เป้าหมาย:** Google APIs เป็น API ที่คนทำงานเจอบ่อยที่สุด — Maps สำหรับเว็บแผนที่, Calendar สำหรับระบบนัด, Sheets สำหรับใช้เป็น "DB ง่ายๆ" ที่ทุกคนแก้ผ่าน Google Drive ได้
+### 3.1 ปัญหาของการคิดแบบ Forward
+นิสิตส่วนใหญ่เริ่มจาก: *"ทำ Form ลาให้สวย"* → สร้างฟอร์มเสร็จแล้วค่อยคิดว่า "เก็บไปแล้วทำอะไรต่อ?"
 
-### 3.1 ทำไม Google APIs สำคัญ?
-- **ฟรี Tier ใจดีที่สุดในวงการ** — ใช้ได้จริงในงานเล็ก-กลาง
-- **คนไทยใช้ Google Workspace กันทั่วไป** — เชื่อมกับเครื่องมือที่มีอยู่แล้ว
-- **Documentation ดีและ AI ถนัด** — สั่ง AI สร้างได้แทบทุก use case
-- **ครอบคลุมทุกอย่าง** — Maps, Calendar, Sheets, Drive, Gmail, YouTube, Translate, Vision
+**ผลลัพธ์:** Form เก็บข้อมูลผิดประเภท, ไม่ครบ, ต้องแก้ทีหลัง
 
-### 3.2 หมวด Google APIs ที่ควรรู้
-| API | หน้าที่ | Use Case ในวัด/โรงเรียน |
-|---|---|---|
-| **Maps** | แผนที่ + Places + Directions | แสดงที่ตั้งวัด, นำทางไปงาน |
-| **Calendar** | จัดการนัด + Events | ปฏิทินกิจกรรม, ตารางคอร์สธรรมะ |
-| **Sheets** | อ่าน-เขียน Google Sheet เป็น DB | ทะเบียนผู้บริจาค, ลงทะเบียน |
-| **Drive** | จัดการไฟล์บน Drive | คลังบทเทศน์, รูปภาพกิจกรรม |
-| **Gmail** | ส่งอีเมล + อ่าน inbox | ส่งใบอนุโมทนา / แจ้งเตือน |
-| **YouTube** | ดึงข้อมูลวิดีโอ | embed playlist บทเทศน์ |
-| **Translate** | แปลภาษา | แปลธรรมะเป็นหลายภาษา |
-| **Vision** | วิเคราะห์รูปภาพ | OCR ใบเสร็จบริจาค |
+### 3.2 Backward Design: คิดย้อนจาก Output
+```
+Report/Output → Process → Input
+   (เห็นอะไร)    (คำนวณยังไง)   (เก็บอะไรจาก user)
+```
 
-### 3.3 2 รูปแบบการใช้ Google APIs
-**(1) API Key** — สำหรับข้อมูลสาธารณะ (Maps, Translate)
-- สมัครที่ [Google Cloud Console](https://console.cloud.google.com) → สร้าง Project → Enable API → สร้าง API Key
-- ใส่ API Key ใน request ได้เลย
+**ตัวอย่าง:**
+- **Report:** Dashboard แสดง "ยอดวันลาคงเหลือของแต่ละคน"
+- **Process:** วันลาทั้งหมด - วันที่ลาแล้ว = วันคงเหลือ
+- **Input:** ฟอร์มเก็บ {ชื่อ, ประเภทการลา, วันที่เริ่ม, วันที่จบ}
 
-**(2) OAuth** — สำหรับข้อมูลส่วนตัวของ user (Calendar, Sheets, Drive)
-- ผู้ใช้ login ด้วย Google เพื่อให้สิทธิ์เว็บเรา
-- ซับซ้อนกว่า แต่ AI ช่วยทำได้ทั้งหมด
+> 🎯 เพราะรู้ว่าสุดท้ายจะ "คำนวณวันคงเหลือ" → จึงรู้ว่าฟอร์มต้องเก็บ "วันที่เริ่ม + วันที่จบ" (ไม่ใช่แค่จำนวนวัน)
 
-> 💡 **เริ่มจาก API Key ก่อน** — ง่ายและเห็นผลเร็ว
+### 3.3 กรณีศึกษา: ฟอร์มประเมินพนักงาน
+**❌ Forward (เริ่มจาก Form):**
+- ทำฟอร์ม 20 ข้อตามที่หัวหน้าสั่ง
+- กรอกเสร็จแล้วเก็บใน Database
+- *เมื่อถามว่า "แล้วเอาไปทำ Report ยังไง?"* → ตอบไม่ได้
 
-### 3.4 Mini Walkthrough 1: Google Maps
-**Use Case:** แสดงแผนที่ที่ตั้งวัดบนหน้า "ติดต่อเรา"
+**✅ Backward (เริ่มจาก Report):**
+- หัวหน้าอยากเห็น Report อะไร? → "คะแนนเฉลี่ยแต่ละ KPI + แนวโน้มรายไตรมาส"
+- ต้องคำนวณยังไง? → average ของแต่ละ KPI, grouping by quarter
+- งั้นต้องเก็บอะไรในฟอร์ม? → คะแนนแต่ละ KPI (1-5), วันที่ประเมิน
+- → ฟอร์มมีแค่ 5-7 ข้อ ที่ตรงเป้า
 
-**Setup:**
-1. ไป Google Cloud Console → Enable **Maps JavaScript API**
-2. สร้าง API Key + จำกัด domain (เพื่อความปลอดภัย)
+### 3.4 สั่ง AI ให้ใช้ Backward Design
+> *"ฉันอยากทำระบบจัดการ [X] ก่อนเริ่มออกแบบ ขอให้คุณ:*
+> *1. ถามฉันว่า Report/Dashboard สุดท้ายอยากเห็นอะไร*
+> *2. แล้วย้อนกลับมาวาง Process ที่ต้องคำนวณ*
+> *3. สุดท้ายค่อยออกแบบ Form/Input ที่จำเป็น*
+> *ห้ามเริ่มจาก UI ก่อนนะ"*
 
-**Prompt ให้ AI:**
-> *"ในเว็บของฉัน เพิ่มหน้า 'ติดต่อเรา' ที่มีแผนที่ Google Maps แสดงพิกัด `13.7563, 100.5018` (วัดสมมติ) ขนาดเต็มความกว้าง สูง 400px มี marker ตรงกลาง ใช้ Maps JavaScript API + เก็บ API Key ใน `.env` (`VITE_GOOGLE_MAPS_KEY`)"*
+---
 
-**สิ่งที่ได้:** แผนที่ฝังในเว็บ + นำทางได้
+## 🎯 ส่วนที่ 4 — เล็ง-ยิง-ปรับ (Aim → Shoot → Adjust)
+*(15 นาที)*
 
-### 3.5 Mini Walkthrough 2: Google Calendar
-**Use Case:** แสดงตารางกิจกรรมของวัดที่ดึงจาก Google Calendar อัตโนมัติ
+### 4.1 MVP คืออะไร
+**MVP = Minimum Viable Product** — ผลิตภัณฑ์เวอร์ชันเล็กที่สุดที่ "ใช้งานได้จริง" และ "ตอบโจทย์หลัก"
 
-**ทำไม Calendar เหมาะกับงานนี้:**
-- คนที่ดูแลปฏิทินไม่ต้องเขียนโค้ด — แค่เพิ่ม event ใน Google Calendar
-- เว็บอัปเดตอัตโนมัติ → "Knowledge Base กลาง" ที่ทุกคนแก้ได้
+ตัวอย่าง MVP ของ Instagram ยุคแรก:
+- ❌ ไม่มี Stories, Reels, Shopping
+- ✅ มีแค่: ถ่าย → ใส่ filter → โพสต์
 
-**Pattern การใช้:**
-- **อ่าน Events จาก Calendar สาธารณะ** → API Key พอ
-- **สร้าง/แก้ Events ในนามผู้ใช้** → ต้อง OAuth
+### 4.2 ทำไมต้องเริ่มเล็ก
+- เร็ว → ได้ feedback จริงเร็ว
+- ถูก → ผิดทางก็ไม่เจ็บมาก
+- ชัด → ผู้ใช้บอกได้ว่าชอบ/ไม่ชอบส่วนไหน
 
-**Prompt ตัวอย่าง:**
-> *"สร้างหน้า 'ปฏิทินกิจกรรม' ที่ดึง events จาก Google Calendar ID ที่ฉันให้ (เป็น calendar สาธารณะ) แสดงเป็นรายการเรียงตามวันที่ — แต่ละ event มีชื่อ, วันเวลา, สถานที่ ใช้ Calendar API v3 + Tailwind"*
+### 4.3 Iteration Loop กับ AI
+```
+เล็ง (Aim)    →  ออกแบบ MVP ใน requirements.md
+ยิง (Shoot)   →  ให้ AI สร้างให้
+ปรับ (Adjust) →  ใช้จริง → จด feedback → ให้ AI แก้
+                                  ↓
+                              วนกลับไป เล็ง ใหม่
+```
 
-### 3.6 Mini Walkthrough 3: Google Sheets เป็น "DB ง่ายๆ"
-**Use Case:** ใช้ Google Sheet เก็บข้อมูลผู้บริจาค/ผู้ลงทะเบียน แล้วให้เว็บอ่าน-เขียนได้
-
-**ทำไมเหมาะมาก:**
-- ไม่ต้อง setup database
-- คนที่ไม่เป็น tech แก้ข้อมูลผ่าน Sheet ได้
-- export/share ง่าย เพราะอยู่ใน Google Drive อยู่แล้ว
-
-**2 ทางเลือก:**
-1. **Sheets API + Service Account** (สำหรับ DB ที่เว็บใช้)
-2. **Apps Script Web App** — ทางลัด, ทำ endpoint ที่อ่าน/เขียน Sheet ได้โดยไม่ต้องเขียน backend
-
-**Prompt ตัวอย่าง:**
-> *"สร้างหน้าฟอร์มลงทะเบียนผู้เข้าร่วมงานบุญ — เมื่อ user กด submit ให้บันทึกลงใน Google Sheet ที่ฉันให้ ID ใช้ Google Apps Script เป็น Web App endpoint (ฉันจะตั้งค่าเอง) อธิบายขั้นตอนการสร้าง Apps Script ให้ด้วย"*
-
-> 💡 **เคล็ดลับ:** Sheet ตัวเดียวกันใช้เป็น "ตัวกลาง" ระหว่าง Form (เว็บ) → Sheet (ข้อมูล) → Looker Studio (Dashboard) → ครบ workflow ในเครื่องมือ Google เท่านั้น
-
-### 3.7 Pattern ที่เจอบ่อยในวัด/โรงเรียน
-- **ลงทะเบียนผ่านเว็บ → Sheet** (Apps Script)
-- **เว็บแสดงปฏิทินกิจกรรม** (Calendar API public)
-- **เว็บมีแผนที่ + เส้นทาง** (Maps + Directions)
-- **ส่งใบอนุโมทนาเป็น PDF อัตโนมัติ** (Drive + Apps Script)
-- **อ่านข้อความจากใบเสร็จ** (Vision OCR)
-
-### 3.8 Workshop เล็ก: เลือก 1 อย่างมาลอง
-ในเวลาที่เหลือของส่วนนี้ เลือก 1 mini-walkthrough ข้างบน → สั่ง AI สร้างในโปรเจกต์ของตัวเอง
+### 4.4 ข้อผิดพลาดที่พบบ่อย
+- **ทำใหญ่ตั้งแต่แรก** — พยายามใส่ทุกฟีเจอร์ก่อนปล่อย → ไม่เคยได้ปล่อย
+- **กลัวคนเห็นของไม่สมบูรณ์** — Reid Hoffman: *"ถ้าคุณไม่อายเวอร์ชันแรกของผลิตภัณฑ์ คุณปล่อยช้าเกินไป"*
+- **ปรับโดยไม่มี feedback** — เดาเอาว่า user อยากได้อะไร → ผิดทาง
 
 ---
 
@@ -202,108 +176,252 @@ console.log(data.temperature);  // 32
 
 ---
 
-## 🌟 ส่วนที่ 4 — LINE OA + Webhook: ช่องทางที่เหมาะกับคนไทย
-*(40 นาที)*
+## 🌟 ส่วนที่ 6 — อัปเดตความรู้และเครื่องมือ AI ใหม่ๆ ตลอดเวลา
+*(25 นาที)*
 
-> 🎯 **เป้าหมาย:** ในไทย LINE คือช่องทางที่คนใช้ทุกวัน — รู้จัก **LINE OA + Messaging API + Webhook** จะเปิดให้เว็บแอปของเราเชื่อมกับผู้ใช้ผ่านช่องทางที่พวกเขาใช้อยู่แล้ว ไม่ต้องให้ติดตั้ง app ใหม่
+> 🎯 **เป้าหมาย:** วงการ AI เปลี่ยนทุก 3-6 เดือน — ทักษะที่สำคัญที่สุดไม่ใช่ "ใช้ tool ปัจจุบันเก่ง" แต่คือ **"หาและประเมิน tool ใหม่ได้เร็ว"**
 
-### 4.1 ทำไม LINE OA เหมาะกับงานคนไทย
-- **คนไทย 50+ ล้านคนใช้ LINE** — ทุกวัด/โรงเรียนน่าจะมี OA อยู่แล้ว หรือสร้างฟรีได้ทันที
-- **Notification ส่งถึงทันที** โดยไม่ต้อง install app ใหม่
-- **ตอบกลับอัตโนมัติ + รับฟอร์ม + แสดงเมนู** ได้ในที่เดียว
-- **ฟรี** (จำกัดจำนวนข้อความ broadcast ฟรีต่อเดือน — รับ-ตอบไม่จำกัด)
+### 6.1 ทำไมต้องอัปเดตตัวเองตลอด
+- **Tool ใหม่ดีกว่าเดิมเสมอ** — ตัวอย่าง: Cursor (2023) → Claude Code (2024) → Antigravity (2025) ทุกตัวเก่งขึ้นกว่าเดิม
+- **คนที่ "รู้ว่าหาที่ไหน" แก้ปัญหาเร็วกว่าคนที่ "พยายามจำทุกอย่าง"**
+- **เลือก tool ผิด = เสียเวลาเป็นเดือน** — แต่ถ้ารู้จัก tool ที่เหมาะกับงาน = เสร็จในวันเดียว
 
-### 4.2 LINE OA + Messaging API คืออะไร
-- **LINE Official Account (OA)** = บัญชี LINE ของวัด/องค์กร — สร้างฟรีที่ [LINE Official Account Manager](https://manager.line.biz)
-- **Messaging API** = ช่องทางให้โปรแกรมของเราส่งและรับข้อความผ่าน OA — เปิดที่ [LINE Developers Console](https://developers.line.biz)
-- **ได้:** Channel Access Token (สำหรับส่งข้อความ) + Channel Secret (สำหรับยืนยันว่าข้อความมาจาก LINE จริง)
+### 6.2 หลักการสำคัญ: รู้ Keyword ก็พอ
+ไม่ต้องเข้าใจลึก — แค่รู้:
+1. **Keyword คืออะไร** (ชื่อ + นิยามสั้นๆ)
+2. **เอาไปทำอะไรได้** (Use case)
+3. **เหมาะกับงานแบบไหน** (สถานการณ์)
 
-### 4.3 Webhook คืออะไร
-**Webhook** = URL ที่บริการอื่นเรียกหาเราเมื่อมีเหตุการณ์เกิด — **ตรงข้ามกับ API ปกติ**
-- **API ปกติ:** เราเรียกหาเค้า (Pull)
-- **Webhook:** เค้าเรียกหาเรา (Push)
+เมื่อเจอปัญหาในการทำงาน → นึก keyword ที่เกี่ยวข้อง → search → ลอง
 
-**ตัวอย่าง:** ผู้ใช้พิมพ์ใน LINE → LINE ส่ง `POST` request มาที่ Webhook URL ของเรา → เราตอบกลับด้วย Reply API
-
-### 4.4 สถาปัตยกรรม LINE OA + Web App
-```
-User           LINE              Our Backend         Our Web/DB
- │              │                      │                  │
- │── chat ─────>│                      │                  │
- │              │── POST webhook ─────>│                  │
- │              │                      │── read/write ──>│
- │              │                      │<── data ────────│
- │              │<── reply API ────────│                  │
- │<── reply ────│                      │                  │
-```
-
-### 4.5 Use Cases ในวัด / โรงเรียน / ศูนย์ปฏิบัติธรรม
-| Use Case | กลไก |
+### 6.3 Keyword สำคัญในวงการ AI (ที่ควรรู้คร่าวๆ)
+| Keyword | คืออะไร / เหมาะกับ |
 |---|---|
-| **ส่งแจ้งเตือนงานบุญ** ถึงผู้ติดตาม | Broadcast หรือ Push API |
-| **รับสมัคร / ลงทะเบียน** ผ่าน LINE | LIFF + Webhook |
-| **ตอบ FAQ อัตโนมัติ** (เวลาเปิด, แผนที่, เมนู) | Reply API + keyword matching |
-| **ส่งใบอนุโมทนา** เมื่อมีคนบริจาค | Push API + image generation |
-| **ดูปฏิทินกิจกรรม** ผ่าน LINE | Rich Menu + LIFF |
-| **AI Chatbot ใน LINE** (รับคำถามแล้วใช้ Claude/GPT ตอบ) | Webhook + LLM API |
+| **LLM** (Large Language Model) | สมองของ AI เช่น GPT, Claude, Gemini |
+| **Agent** | AI ที่ทำงานเป็นชุดเองได้ (ไม่ใช่แค่ตอบคำถาม) |
+| **MCP** (Model Context Protocol) | Protocol เชื่อม AI กับเครื่องมือต่างๆ (เรียนใน S2) |
+| **RAG** (Retrieval-Augmented Generation) | ให้ AI ตอบจากข้อมูลของเราเอง (เรียนเพิ่มเองได้ — ดู NotebookLM / Claude Projects) |
+| **Fine-tuning** | สอน AI ให้เก่งงานเฉพาะทาง |
+| **Tool Use / Function Calling** | AI เรียกใช้เครื่องมือ/API เองได้ |
+| **Multi-modal** | AI ที่เข้าใจรูป + เสียง + ข้อความ |
+| **Vector Database** | DB สำหรับเก็บข้อมูลให้ RAG ค้นหาได้ |
+| **Embeddings** | แปลงข้อความเป็นตัวเลขให้ AI เข้าใจ |
+| **Prompt Engineering** | ศิลปะการสั่ง AI ให้ได้ผลลัพธ์ดี |
+| **Context Window** | ขนาดข้อมูลที่ AI จำได้ในรอบเดียว |
 
-### 4.6 LIFF — เว็บแอปของเรารันใน LINE ได้
-**LIFF (LINE Front-end Framework)** = ฝังเว็บที่เราสร้างไว้แล้วใน LINE app ได้ทันที
-- User คลิกลิงก์ใน LINE → เปิดเว็บภายใน LINE (ไม่ออกไปเบราว์เซอร์)
-- เว็บได้ข้อมูล User ID จาก LINE → ผูกข้อมูลกับ profile ผู้ใช้ได้
-- **เหมาะกับ:** ฟอร์มลงทะเบียน, แสดง Dashboard, ระบบจองที่พัก
+### 6.4 หมวดเครื่องมือ AI สำหรับงานต่างๆ
+เก็บไว้เป็น "แผนที่เครื่องมือ" — เมื่อเจอปัญหาให้นึกถึงหมวดที่เกี่ยวข้องก่อน
 
-### 4.7 Prompt ตัวอย่าง: สร้าง LINE Bot เบื้องต้น
-> *"ฉันมี LINE OA + Channel Access Token + Channel Secret แล้ว ช่วยสร้าง Webhook endpoint บน Vercel Serverless Function ที่:*
-> *- รับข้อความจาก LINE Messaging API*
-> *- ถ้าผู้ใช้พิมพ์ 'ลงทะเบียน' → reply กลับด้วยลิงก์ฟอร์ม LIFF*
-> *- ถ้าพิมพ์ 'ปฏิทิน' → reply ปฏิทินกิจกรรมเดือนนี้ (mock data ก่อนได้)*
-> *- ถ้าพิมพ์อย่างอื่น → reply แสดง Quick Reply ให้เลือก*
-> *- ใช้ Node.js + LINE Bot SDK (`@line/bot-sdk`)*
-> *- บอกขั้นตอนการตั้งค่า Webhook URL ใน LINE Developers Console ให้ฉันด้วย"*
+| หมวด | ตัวอย่าง Tool |
+|---|---|
+| **AI Coding Editor** | Cursor, Claude Code, Antigravity, Windsurf |
+| **Build Web App (No-code/AI)** | Lovable, Bolt.new, v0.dev, Replit Agent |
+| **ออกแบบ UI** | Google Stitch, v0.dev, Galileo AI, Uizard |
+| **AI Chat / Assistant** | Claude, ChatGPT, Gemini, Perplexity, Grok |
+| **Search / Research** | Perplexity, ChatGPT Search, Phind |
+| **สร้างรูปภาพ** | Midjourney, Flux, DALL-E, Imagen, Stable Diffusion |
+| **สร้างวิดีโอ** | Sora, Veo, Runway, Kling |
+| **เสียง / Voice / เพลง** | ElevenLabs, Suno, Udio |
+| **Productivity** | Notion AI, Granola (มีตติ้ง), Reflect, Mem |
+| **API / Backend** | OpenAI API, Anthropic API, Replicate, OpenRouter |
+| **Vector DB / RAG** | Pinecone, Supabase Vector, Weaviate, Chroma |
+| **Automation** | Zapier (AI), Make.com, n8n |
 
-### 4.8 ขั้นตอน Setup คร่าวๆ
-1. สร้าง **LINE OA** ที่ Official Account Manager
-2. เปิด **Messaging API** ใน Developers Console → ได้ Channel Access Token
-3. Deploy Webhook ที่ **Vercel** (หรือ Cloudflare Workers / Supabase Edge Functions)
-4. กลับมาที่ Developers Console → ใส่ Webhook URL → กด Verify
-5. ทดสอบโดยพิมพ์ใน LINE OA
+### 6.5 แหล่งข่าวสารที่ควรติดตาม
 
-### 4.9 แหล่งศึกษาต่อ
-- **[LINE Developers](https://developers.line.biz/)** — official docs (มีภาษาไทยบางส่วน)
-- **[LINE Developers Thailand](https://www.facebook.com/groups/linedeveloperth)** (Facebook Group) — ชุมชนไทย ถามตอบเร็ว
-- **LINE API Expert** — ค้น YouTube "LINE OA ภาษาไทย" จะเจอคลิปสอนเยอะ
-- ตัวอย่างโค้ดบน GitHub: `line/line-bot-sdk-nodejs`
+#### 🇹🇭 ภาษาไทย (เริ่มจากนี่ก่อน — คุ้นวงการไทย)
 
-> 💡 **ต่อยอด:** ถ้าใส่ Claude API ใน Webhook → ได้ **AI Chatbot ที่อยู่ใน LINE OA ของวัด** ตอบคำถามอัตโนมัติ 24/7
+**👥 Facebook Groups (ชุมชนใหญ่ที่สุดในไทย):**
+- **ChatGPT Thailand** — กลุ่มหลักของคน AI ไทย, ถามตอบเร็ว
+- **AI สำหรับคนทำงาน** — เน้น use case ในการทำงานจริง
+- **Generative AI Thailand** — เน้นภาพ/วิดีโอ/เสียง
+- **Prompt Thailand** — แชร์ prompt ที่ใช้แล้วได้ผล
+- **AI Tools Thailand** — รวม tool ใหม่ที่ไทยใช้กันได้จริง
+
+**📰 เพจ Facebook / Website ไทย:**
+- **Borntodev** — สอน dev ครบทุกเรื่อง รวมถึง AI
+- **Skooldio** — คอร์สและบทความสาย tech/data/AI
+- **Techsauce** ([techsauce.co](https://techsauce.co)) — ข่าวสาร tech ระดับเอเชีย
+- **Blognone** ([blognone.com](https://blognone.com)) — ข่าว tech รายวัน หมวด AI
+- **Beartai** ([beartai.com](https://beartai.com)) — รีวิว/ข่าว tech ฉบับชาวบ้าน
+- **AI Mind Thailand** — เนื้อหาเชิงประยุกต์กับงาน
+
+**📺 YouTube ไทย:**
+- **Borntodev** — สอนใช้ AI tool สำหรับ developer
+- **KornKnow** — สอน coding + AI tool ภาษาไทย
+- **THE STANDARD WEALTH/TECH** — ข่าว AI ฉบับเข้าใจง่าย
+- **9arm** — แชร์การใช้ AI ในธุรกิจ
+- **Beartai BRIEF** — สรุปข่าว tech รายวัน
+
+**🎙️ Podcast ไทย:**
+- **Mission to the Moon** — ตอนเกี่ยวกับ AI ในการทำงาน
+- **The Secret Sauce** — สัมภาษณ์คนใช้ AI สร้างธุรกิจ
+- **THE STANDARD Tech** — เจาะข่าว AI ทุกสัปดาห์
+
+**💬 Discord / LINE OpenChat:**
+- Discord "AI Thailand", "Generative AI TH" — ถามได้ทันที, มี channel แยกตามหมวด
+- LINE OpenChat ค้นคำว่า "ChatGPT", "AI ภาษาไทย"
 
 ---
 
-## 📋 ส่วนที่ 5 — สรุปบทเรียน & การบ้าน
-*(15 นาที)*
+#### 🌍 ภาษาอังกฤษ (คัดเฉพาะที่ยัง active ปี 2026)
 
-### 5.1 สิ่งที่ได้เรียนวันนี้
-- **API + JSON** = เมนูให้โปรแกรมสั่งข้อมูลจากบริการอื่น
-- **fetch()** = คำสั่ง JS เรียก API (AI เขียนให้)
-- **Google APIs** = Maps / Calendar / Sheets / Drive (ใช้บ่อยที่สุดในงานจริง)
-- **LINE OA + Webhook + LIFF** = ช่องทางสื่อสารกับผู้ใช้ที่เหมาะกับคนไทย
+**📺 YouTube:**
+- **Matt Wolfe** — สรุปข่าว AI รายสัปดาห์ (Future Tools)
+- **AI Explained** — เจาะลึก paper/model ใหม่ (โทนวิเคราะห์)
+- **Fireship** — clip สั้น 100 วินาที สำหรับ developer
+- **Andrej Karpathy** (@karpathy) — lecture ลึกระดับโลก, ฟรี
 
-### 5.2 ภารกิจในห้องเรียน
-- [ ] สมัคร API Key: Google Cloud + LINE Developers
-- [ ] เลือก 1 Google API mini-walkthrough (Maps / Calendar / Sheets) → ทำในโปรเจกต์ของตัวเอง
-- [ ] สร้าง LINE OA + Webhook ที่ตอบ keyword ได้ (ส่วน 4.7)
-- [ ] Deploy Webhook ขึ้น Vercel (ระวัง! อย่า commit API Key)
+**📧 Newsletter (daily/weekly):**
+- **Ben's Bites** ([bensbites.co](https://bensbites.co)) — สรุปข่าวเช้า, อ่าน 5 นาทีจบ
+- **The Rundown AI** ([therundown.ai](https://therundown.ai)) — daily, เน้นใช้งานจริง
+- **TLDR AI** ([tldr.tech/ai](https://tldr.tech/ai)) — สั้น เน้น tech
+- **Latent Space** (Swyx) — เจาะลึกระดับ engineer
 
-### 5.3 การบ้าน
-1. **เลือก 1 ช่องทาง** ที่อยากเชื่อมกับเว็บแอปของวัด/โรงเรียน — Google Sheets, LINE OA, หรือ Google Calendar
-2. **คิด Workflow จริง:** เช่น "user สมัครงานบุญผ่าน LINE OA → ข้อมูลไป Sheet → ส่งการ์ดยืนยันกลับใน LINE"
-3. **ลอง integrate เพิ่ม:** เช่น เพิ่ม Google Maps แสดงที่ตั้งวัด, หรือเพิ่ม keyword ที่ LINE OA ตอบ
+**🐦 X / Twitter (account ควร follow):**
+- `@AnthropicAI`, `@OpenAI`, `@GoogleDeepMind` — official channels
+- `@karpathy` — ลึกและสอนเก่ง
+- `@simonw` (Simon Willison) — blog อิสระดีมาก
+- `@swyx` — Latent Space podcast host
+
+**🌐 Web / Directory:**
+- **Hacker News** ([news.ycombinator.com](https://news.ycombinator.com)) — discussion ระดับ engineer
+- **Product Hunt** (หมวด AI) — tool ใหม่รายวัน
+- **There's An AI For That** ([theresanaiforthat.com](https://theresanaiforthat.com)) — ไดเรกทอรี AI tool ใหญ่สุด
+- **Simon Willison's Blog** ([simonwillison.net](https://simonwillison.net)) — บล็อกอิสระคุณภาพสูง
+
+### 6.6 วิธีลอง Tool ใหม่ใน 15 นาที (Tool Evaluation Protocol)
+1. **หา Keyword** ที่อยากลอง (เช่น "AI image generator")
+2. **Search YouTube** "tool name tutorial 2025" → ดู 5 นาทีแรก
+3. **ไปสมัครใช้** (เกือบทุกตัวมี Free tier)
+4. **ทำงานจริง 1 อัน** (เช่น สร้างรูป icon สำหรับโปรเจกต์)
+5. **ถาม AI:** *"Tool X เหมาะกับงาน Y ของฉันไหม? เทียบกับ Tool Z ที่ฉันใช้อยู่ ดีกว่าตรงไหน?"*
+
+### 6.7 หลักตัดสินใจว่าควรเปลี่ยน Tool ไหม
+- ❌ **อย่าเปลี่ยน Tool ทุกครั้งที่มีของใหม่** — เสียเวลาเรียนรู้ใหม่
+- ✅ **เปลี่ยนเมื่อ Tool ใหม่แก้ปัญหาที่ Tool เดิมแก้ไม่ได้** (ไม่ใช่แค่เร็วขึ้นเล็กน้อย)
+- ✅ **เปลี่ยนเมื่อราคา/ความเร็ว/คุณภาพดีขึ้นอย่างมีนัยสำคัญ** (2x ขึ้นไป)
+- ✅ **ทดลองก่อน 1 อาทิตย์** แล้วค่อยตัดสินใจย้ายถาวร
+
+### 6.8 Workshop เล็กๆ: ค้นหา Tool ใน 5 นาที
+**ภารกิจ:** เลือก 1 ปัญหาในการทำงานของตัวเอง (เช่น "ต้องทำสรุปประชุมทุกอาทิตย์")
+1. นึก keyword: "AI meeting note taker"
+2. Search → เจอ Granola, Fireflies, Otter
+3. เลือก 1 ตัว → สมัคร → ลอง
+
+> 🎯 **Key Takeaway:** ทักษะที่สำคัญที่สุดในยุค AI คือ **"การหาเครื่องมือใหม่"** ไม่ใช่ "การเก่งเครื่องมือเดิม"
+
+---
+
+## 💼 ส่วนที่ 7 — Case Studies: งานจริง → เว็บแอปอะไร?
+*(30 นาที)*
+
+> 🎯 ใช้ Backward Design กับ 10 cases ที่ใช้ได้จริงในวัด / โรงเรียน / ศูนย์ปฏิบัติธรรมทั่วประเทศ
+> Tech Stack ที่ใช้ได้กับทุก case: **React + Vite + Tailwind + Supabase + recharts**
+
+### 7.1 Case 1: ระบบบันทึกการรับบริจาค
+- **Output:** Dashboard ยอดบริจาครายเดือน, แยกตามวัตถุประสงค์ (สร้างศาลา / ค่าน้ำค่าไฟ / กองทุนการศึกษา), Top Donors
+- **Process:** sum ยอด group by month + by วัตถุประสงค์ + by ผู้บริจาค
+- **Input:** ฟอร์ม {ชื่อผู้บริจาค (optional), จำนวนเงิน, วัตถุประสงค์, วันที่, ช่องทาง (เงินสด/โอน), เลขที่ใบอนุโมทนา}
+- **เพิ่มได้:** ปริ้นใบอนุโมทนา PDF อัตโนมัติ, ส่ง LINE แจ้งผู้บริจาค
+
+### 7.2 Case 2: ลงทะเบียนผู้เข้าร่วมกิจกรรม / งานบุญ
+- **Output:** จำนวนผู้ลงทะเบียนแบบ Real-time, สรุปตามช่วงอายุ / จังหวัด / กิจกรรม, รายชื่อพร้อมพิมพ์
+- **Process:** count + group by ฟิลด์ต่างๆ
+- **Input:** ฟอร์ม {ชื่อ, อายุ, จังหวัด, เบอร์โทร, อาหาร (มังสวิรัติ/ทั่วไป), ที่พัก}
+- **เพิ่มได้:** QR Code check-in ที่หน้างาน, ส่ง SMS ยืนยันอัตโนมัติ
+
+### 7.3 Case 3: ระบบจองที่พัก / กุฏิปฏิบัติธรรม
+- **Output:** ปฏิทินแสดงกุฏิที่ว่าง/จองแล้ว, รายชื่อผู้พักของแต่ละวัน
+- **Process:** เช็คความขัดแย้งของวันเข้า-ออก, แสดงสถานะ available/booked
+- **Input:** ฟอร์ม {ชื่อ, วันที่เข้า, วันที่ออก, กุฏิที่เลือก, จำนวนคน, เหตุผล}
+- **เพิ่มได้:** ส่ง email ยืนยัน, อนุญาตให้พระ/อาจารย์ approve
+
+### 7.4 Case 4: ทะเบียนนักเรียน / ผู้ปฏิบัติธรรม
+- **Output:** Profile รายคน, ประวัติเข้าคอร์สทั้งหมด, สรุปผู้ที่กลับมาบ่อย
+- **Process:** count คอร์สที่เข้า per person, last attended date
+- **Input:** ฟอร์ม {ชื่อ, อายุ, ที่อยู่, ประวัติการปฏิบัติ, คอร์สที่เข้า, วันที่เข้า/ออก}
+- **เพิ่มได้:** Export เป็น CSV ส่งให้ฝ่ายธุรการ
+
+### 7.5 Case 5: บันทึกการปฏิบัติธรรม / สวดมนต์ประจำวัน
+- **Output:** Habit Tracker แสดง streak การปฏิบัติของแต่ละคน, กราฟแนวโน้ม 30 วัน
+- **Process:** count วันที่ปฏิบัติติดต่อกัน, average เวลานั่งสมาธิต่อวัน
+- **Input:** check-in รายวัน {วันที่, เวลานั่งสมาธิ (นาที), บทสวด, ความรู้สึก}
+- **เพิ่มได้:** Notification เตือนตอนเช้า, badge เมื่อ streak ครบ 7/30 วัน
+
+### 7.6 Case 6: ระบบรับสมัครคอร์สธรรมะ / คอร์สเรียน
+- **Output:** จำนวนผู้สมัครแยกตาม status (รอ approve / approved / รอชำระเงิน / ยืนยันแล้ว), Dashboard คอร์สยอดนิยม
+- **Process:** group by status + course, count slots remaining
+- **Input:** ใบสมัคร {ข้อมูลส่วนตัว, คอร์สที่สมัคร, ประสบการณ์, แรงจูงใจ, ค่าใช้จ่าย}
+- **เพิ่มได้:** ส่ง email ยืนยันอัตโนมัติ, จำกัดที่นั่งต่อคอร์ส
+
+### 7.7 Case 7: ระบบสต็อกสังฆทาน / วัสดุประจำวัด
+- **Output:** รายการของคงเหลือ, แจ้งเตือนของใกล้หมด, ประวัติรับ-เบิก
+- **Process:** ของรับเข้า - ของเบิกออก = คงเหลือ
+- **Input:** ฟอร์มรับของเข้า + ฟอร์มเบิกของออก + ฟอร์มทิ้งของหมดอายุ
+- **เพิ่มได้:** QR code/Barcode สแกนของแต่ละชนิด, แจ้งเตือนผ่าน LINE
+
+### 7.8 Case 8: ระบบเช็คชื่อนักเรียน + ติดตามผลการเรียน
+- **Output:** % การมาเรียนของแต่ละคน, แนวโน้มคะแนนรายวิชา, รายชื่อนักเรียนที่ต้องช่วยเหลือ
+- **Process:** count present/total per student, average คะแนนต่อรายวิชา
+- **Input:** เช็คชื่อรายวันโดยครู + บันทึกคะแนนหลังสอบ
+- **เพิ่มได้:** ส่งสรุปให้ผู้ปกครองรายเดือน, sync กับ Google Sheets
+
+### 7.9 Case 9: ตารางนิมนต์พระ / กิจวัตรประจำวัน
+- **Output:** ตารางสัปดาห์แสดงพระแต่ละรูปไปงานไหน, สรุปจำนวนงานต่อพระต่อเดือน
+- **Process:** group งาน by date + by พระ, แสดงเป็น calendar view
+- **Input:** ฟอร์มลงงาน {วันที่, เวลา, สถานที่, ประเภทงาน (สวด/แสดงธรรม/บิณฑบาต), พระที่ไป}
+- **เพิ่มได้:** ส่ง LINE แจ้งเตือนล่วงหน้า 1 วัน
+
+### 7.10 Case 10: คลังบทเทศน์ / ธรรมะออนไลน์
+- **Output:** หน้ารวมบทเทศน์ที่ค้นหาได้, แยกตามหัวข้อ/ผู้แสดงธรรม, สถิติยอดเข้าชม
+- **Process:** full-text search + filter by tags + count views
+- **Input:** ฟอร์มเพิ่มบทเทศน์ {ชื่อเรื่อง, ผู้แสดง, วันที่, หัวข้อ (tag), ไฟล์เสียง/วิดีโอ/บทถอด}
+- **เพิ่มได้:** ใส่ AI ตอบคำถามจากบทเทศน์ (RAG — ลองใช้ NotebookLM / Claude Projects ก่อน)
+
+---
+
+> 💡 **สังเกต:** ทั้ง 10 case ใช้ Pattern เดียวกัน → **Form + Database + Dashboard** — เปลี่ยนแค่ฟิลด์ใน Form และวิธีคำนวณใน Dashboard เท่านั้น
+>
+> 🎯 **นี่คือพลังของ AI-First:** เมื่อรู้ Pattern แล้ว → สั่ง AI ทำเคสไหนก็ได้ภายใน 1-2 ชั่วโมง
+
+---
+
+## 🛠️ ส่วนที่ 8 — Workshop: เลือก Case ของตัวเอง
+*(20 นาที)*
+
+### 8.1 ภารกิจในห้องเรียน
+1. **เลือก 1 Case Study** จาก 4 cases ข้างบน หรือคิดจากงานจริงของตัวเอง
+2. **ทำ Backward Design** บนกระดาษ/ไฟล์:
+   - Report สุดท้ายที่อยากเห็น (อย่างน้อย 2 widget)
+   - Process การคำนวณ
+   - Input ที่ต้องเก็บ
+3. **เขียน `requirements.md`** ที่มีครบ 5 องค์ประกอบ (Context / Goal / Constraints / Files / Workflow)
+4. **ให้ AI ทำ Workflow:** Research → Plan → Generate → Review
+5. **อย่าลืม Plan ก่อน Generate!** — บังคับ AI ให้สรุปแผนก่อนเขียนโค้ด
+
+---
+
+## 📋 ส่วนที่ 9 — สรุปบทเรียน & การบ้าน
+*(10 นาที)*
+
+### 9.1 สิ่งที่ได้เรียนวันนี้
+- **Agent Framework 5 ส่วน** = Context / Goal / Constraints / Files / Workflow
+- **Backward Design** = เริ่มจาก Output ย้อนสู่ Input
+- **เล็ง-ยิง-ปรับ** = MVP เร็ว แล้ว iterate
+- **อัปเดตความรู้/Tool ใหม่** = รู้ keyword + รู้แหล่งข่าว + รู้วิธีทดลอง
+- **Case Studies** = ใช้ Pattern เดียวกัน Form + DB + Dashboard กับงานจริง
+
+### 9.2 การบ้าน
+1. **เลือก 1 Tool ที่ไม่เคยใช้** จากตารางในส่วนที่ 6.4 → ลองตาม Tool Evaluation Protocol (ส่วน 6.6)
+2. **เขียน `requirements.md`** สำหรับโปรเจกต์งานจริงของตัวเอง (ใช้ Backward Design)
+3. **สมัคร 1 Newsletter หรือ Follow 3 Account Twitter** จากส่วน 6.5
 4. **เตรียมตัวคาบหน้า (S6 - Final Project):** เลือกหัวข้อโปรเจกต์ที่จะทำ + ร่าง `requirements.md` มา
 
 ---
 
 ## 💡 เทคนิคสำหรับผู้สอน (Instructor Notes)
-1. **ความปลอดภัย API Key เป็นเรื่องสำคัญ** — สาธิตว่าถ้า commit เข้า Git ก็จะมีคนใช้ฟรีจน credit หมด → ต้อง `.env` + `.gitignore` ทุกครั้ง
-2. **ถ้า CORS error ในห้อง** ให้ AI แก้ด้วย serverless function (เช่น Vercel Functions) หรือใช้ proxy
-3. **ขายไอเดียว่า "AI + ช่องทางที่คนใช้จริง = สินทรัพย์"** — เว็บที่เชื่อม Google Sheets + LINE OA ใช้ได้ทันทีในวัด/โรงเรียน
-4. **LINE OA setup กินเวลา** — ให้นิสิตทำตั้งแต่ต้นชั่วโมงพักเบรก เพื่อให้รอ verify ได้ทันในชั่วโมง
+1. **ขายแนวคิด "Tool หาเอง":** สมัย AI เปลี่ยนเร็ว ทักษะ "หา tool ใหม่" สำคัญกว่า "เก่ง tool ปัจจุบัน" — ย้ำตลอด
+2. **อย่าให้นิสิตยึดติด tool ที่เราใช้สอน** — บอกว่า 6 เดือนหน้าอาจมีของดีกว่า เป้าหมายคือเข้าใจ "หลักการ"
+3. **Backward Design ใช้ตัวอย่างให้เห็นชัด:** ถ้านิสิตงง ให้เปรียบเทียบ "สร้างฟอร์ม 20 ช่องไม่รู้จะเอาไปทำอะไร" vs "สร้างฟอร์ม 5 ช่องที่รู้ว่าจะคำนวณอะไร"
+4. **Live Demo การหา Tool:** ในห้องเปิด Product Hunt หรือ There's An AI For That ให้นิสิตเห็นว่ามี tool ใหม่ทุกวัน
