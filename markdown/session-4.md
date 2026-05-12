@@ -227,32 +227,67 @@ Report/Output → Process → Input
 | **Automation** | Zapier (AI), Make.com, n8n |
 
 ### 6.5 แหล่งข่าวสารที่ควรติดตาม
-**📺 YouTube (ภาษาอังกฤษ):**
-- **Matt Wolfe** — สรุปข่าว AI ทุกสัปดาห์
-- **AI Explained** — เจาะลึก paper/feature ใหม่
-- **Fireship** — สั้น กระชับ สำหรับ developer
-- **Wes Roth, Two Minute Papers** — ข่าวและ research
 
-**📧 Newsletter:**
-- **Ben's Bites** — เช้าๆ สรุปข่าว AI
-- **The Rundown AI** — daily, สำหรับคนทำงาน
-- **TLDR AI** — สั้น เน้น tech
-- **The Neuron** — friendly, อ่านง่าย
+#### 🇹🇭 ภาษาไทย (เริ่มจากนี่ก่อน — คุ้นวงการไทย)
 
-**🐦 Twitter/X (account ที่ควร follow):**
-- `@karpathy` — อดีต OpenAI/Tesla, สอนเก่งมาก
-- `@sama` (Sam Altman), `@AnthropicAI`, `@OpenAI`
-- `@simonw` — Simon Willison, blog ดีมาก
-- `@latentspacepod` — podcast ดีๆ ทุกสัปดาห์
+**👥 Facebook Groups (ชุมชนใหญ่ที่สุดในไทย):**
+- **ChatGPT Thailand** — กลุ่มหลักของคน AI ไทย, ถามตอบเร็ว
+- **AI สำหรับคนทำงาน** — เน้น use case ในการทำงานจริง
+- **Generative AI Thailand** — เน้นภาพ/วิดีโอ/เสียง
+- **Prompt Thailand** — แชร์ prompt ที่ใช้แล้วได้ผล
+- **AI Tools Thailand** — รวม tool ใหม่ที่ไทยใช้กันได้จริง
 
-**🌐 Web:**
+**📰 เพจ Facebook / Website ไทย:**
+- **Borntodev** — สอน dev ครบทุกเรื่อง รวมถึง AI
+- **Skooldio** — คอร์สและบทความสาย tech/data/AI
+- **Techsauce** ([techsauce.co](https://techsauce.co)) — ข่าวสาร tech ระดับเอเชีย
+- **Blognone** ([blognone.com](https://blognone.com)) — ข่าว tech รายวัน หมวด AI
+- **Beartai** ([beartai.com](https://beartai.com)) — รีวิว/ข่าว tech ฉบับชาวบ้าน
+- **AI Mind Thailand** — เนื้อหาเชิงประยุกต์กับงาน
+
+**📺 YouTube ไทย:**
+- **Borntodev** — สอนใช้ AI tool สำหรับ developer
+- **KornKnow** — สอน coding + AI tool ภาษาไทย
+- **THE STANDARD WEALTH/TECH** — ข่าว AI ฉบับเข้าใจง่าย
+- **9arm** — แชร์การใช้ AI ในธุรกิจ
+- **Beartai BRIEF** — สรุปข่าว tech รายวัน
+
+**🎙️ Podcast ไทย:**
+- **Mission to the Moon** — ตอนเกี่ยวกับ AI ในการทำงาน
+- **The Secret Sauce** — สัมภาษณ์คนใช้ AI สร้างธุรกิจ
+- **THE STANDARD Tech** — เจาะข่าว AI ทุกสัปดาห์
+
+**💬 Discord / LINE OpenChat:**
+- Discord "AI Thailand", "Generative AI TH" — ถามได้ทันที, มี channel แยกตามหมวด
+- LINE OpenChat ค้นคำว่า "ChatGPT", "AI ภาษาไทย"
+
+---
+
+#### 🌍 ภาษาอังกฤษ (คัดเฉพาะที่ยัง active ปี 2026)
+
+**📺 YouTube:**
+- **Matt Wolfe** — สรุปข่าว AI รายสัปดาห์ (Future Tools)
+- **AI Explained** — เจาะลึก paper/model ใหม่ (โทนวิเคราะห์)
+- **Fireship** — clip สั้น 100 วินาที สำหรับ developer
+- **Andrej Karpathy** (@karpathy) — lecture ลึกระดับโลก, ฟรี
+
+**📧 Newsletter (daily/weekly):**
+- **Ben's Bites** ([bensbites.co](https://bensbites.co)) — สรุปข่าวเช้า, อ่าน 5 นาทีจบ
+- **The Rundown AI** ([therundown.ai](https://therundown.ai)) — daily, เน้นใช้งานจริง
+- **TLDR AI** ([tldr.tech/ai](https://tldr.tech/ai)) — สั้น เน้น tech
+- **Latent Space** (Swyx) — เจาะลึกระดับ engineer
+
+**🐦 X / Twitter (account ควร follow):**
+- `@AnthropicAI`, `@OpenAI`, `@GoogleDeepMind` — official channels
+- `@karpathy` — ลึกและสอนเก่ง
+- `@simonw` (Simon Willison) — blog อิสระดีมาก
+- `@swyx` — Latent Space podcast host
+
+**🌐 Web / Directory:**
+- **Hacker News** ([news.ycombinator.com](https://news.ycombinator.com)) — discussion ระดับ engineer
 - **Product Hunt** (หมวด AI) — tool ใหม่รายวัน
-- **Hacker News** — discussion ของวงการ tech
-- **There's An AI For That** (theresanaiforthat.com) — ไดเรกทอรี AI tools
-
-**🇹🇭 ภาษาไทย:**
-- กลุ่ม Facebook: "ChatGPT Thailand", "AI สำหรับคนทำงาน"
-- YouTube: ช่อง ToolApp, KornKnow
+- **There's An AI For That** ([theresanaiforthat.com](https://theresanaiforthat.com)) — ไดเรกทอรี AI tool ใหญ่สุด
+- **Simon Willison's Blog** ([simonwillison.net](https://simonwillison.net)) — บล็อกอิสระคุณภาพสูง
 
 ### 6.6 วิธีลอง Tool ใหม่ใน 15 นาที (Tool Evaluation Protocol)
 1. **หา Keyword** ที่อยากลอง (เช่น "AI image generator")
@@ -280,33 +315,74 @@ Report/Output → Process → Input
 ## 💼 ส่วนที่ 7 — Case Studies: งานจริง → เว็บแอปอะไร?
 *(30 นาที)*
 
-> 🎯 ใช้ Backward Design กับ 4 cases ที่เจอบ่อยในการทำงานไทย
+> 🎯 ใช้ Backward Design กับ 10 cases ที่ใช้ได้จริงในวัด / โรงเรียน / ศูนย์ปฏิบัติธรรมทั่วประเทศ
+> Tech Stack ที่ใช้ได้กับทุก case: **React + Vite + Tailwind + Supabase + recharts**
 
-### 7.1 Case 1: งาน HR — ระบบจัดการการลา
-- **Output (Dashboard):** ยอดวันลาคงเหลือของแต่ละคน, สรุปประเภทการลายอดนิยม
-- **Process:** วันลาทั้งหมด - วันลาที่ใช้ไป (group by ประเภท)
-- **Input:** ฟอร์มลา {ชื่อ, ประเภท, วันที่เริ่ม, วันที่จบ, เหตุผล}
-- **Tech:** React + Supabase + recharts
+### 7.1 Case 1: ระบบบันทึกการรับบริจาค
+- **Output:** Dashboard ยอดบริจาครายเดือน, แยกตามวัตถุประสงค์ (สร้างศาลา / ค่าน้ำค่าไฟ / กองทุนการศึกษา), Top Donors
+- **Process:** sum ยอด group by month + by วัตถุประสงค์ + by ผู้บริจาค
+- **Input:** ฟอร์ม {ชื่อผู้บริจาค (optional), จำนวนเงิน, วัตถุประสงค์, วันที่, ช่องทาง (เงินสด/โอน), เลขที่ใบอนุโมทนา}
+- **เพิ่มได้:** ปริ้นใบอนุโมทนา PDF อัตโนมัติ, ส่ง LINE แจ้งผู้บริจาค
 
-### 7.2 Case 2: งานขาย — ระบบ Lead + ยอดขาย
-- **Output:** Funnel ของ Lead, ยอดขายรายเดือน, Top Customers
-- **Process:** count Lead by stage, sum ยอด by month/customer
-- **Input:** ฟอร์ม Lead {ชื่อ, บริษัท, สถานะ (Lead → Qualified → Closed), มูลค่า}
-- **Tech:** เหมือนข้างบน
+### 7.2 Case 2: ลงทะเบียนผู้เข้าร่วมกิจกรรม / งานบุญ
+- **Output:** จำนวนผู้ลงทะเบียนแบบ Real-time, สรุปตามช่วงอายุ / จังหวัด / กิจกรรม, รายชื่อพร้อมพิมพ์
+- **Process:** count + group by ฟิลด์ต่างๆ
+- **Input:** ฟอร์ม {ชื่อ, อายุ, จังหวัด, เบอร์โทร, อาหาร (มังสวิรัติ/ทั่วไป), ที่พัก}
+- **เพิ่มได้:** QR Code check-in ที่หน้างาน, ส่ง SMS ยืนยันอัตโนมัติ
 
-### 7.3 Case 3: งานครู — ระบบเช็คชื่อ + ติดตามผล
-- **Output:** % การมาเรียน, แนวโน้มคะแนนรายคน
+### 7.3 Case 3: ระบบจองที่พัก / กุฏิปฏิบัติธรรม
+- **Output:** ปฏิทินแสดงกุฏิที่ว่าง/จองแล้ว, รายชื่อผู้พักของแต่ละวัน
+- **Process:** เช็คความขัดแย้งของวันเข้า-ออก, แสดงสถานะ available/booked
+- **Input:** ฟอร์ม {ชื่อ, วันที่เข้า, วันที่ออก, กุฏิที่เลือก, จำนวนคน, เหตุผล}
+- **เพิ่มได้:** ส่ง email ยืนยัน, อนุญาตให้พระ/อาจารย์ approve
+
+### 7.4 Case 4: ทะเบียนนักเรียน / ผู้ปฏิบัติธรรม
+- **Output:** Profile รายคน, ประวัติเข้าคอร์สทั้งหมด, สรุปผู้ที่กลับมาบ่อย
+- **Process:** count คอร์สที่เข้า per person, last attended date
+- **Input:** ฟอร์ม {ชื่อ, อายุ, ที่อยู่, ประวัติการปฏิบัติ, คอร์สที่เข้า, วันที่เข้า/ออก}
+- **เพิ่มได้:** Export เป็น CSV ส่งให้ฝ่ายธุรการ
+
+### 7.5 Case 5: บันทึกการปฏิบัติธรรม / สวดมนต์ประจำวัน
+- **Output:** Habit Tracker แสดง streak การปฏิบัติของแต่ละคน, กราฟแนวโน้ม 30 วัน
+- **Process:** count วันที่ปฏิบัติติดต่อกัน, average เวลานั่งสมาธิต่อวัน
+- **Input:** check-in รายวัน {วันที่, เวลานั่งสมาธิ (นาที), บทสวด, ความรู้สึก}
+- **เพิ่มได้:** Notification เตือนตอนเช้า, badge เมื่อ streak ครบ 7/30 วัน
+
+### 7.6 Case 6: ระบบรับสมัครคอร์สธรรมะ / คอร์สเรียน
+- **Output:** จำนวนผู้สมัครแยกตาม status (รอ approve / approved / รอชำระเงิน / ยืนยันแล้ว), Dashboard คอร์สยอดนิยม
+- **Process:** group by status + course, count slots remaining
+- **Input:** ใบสมัคร {ข้อมูลส่วนตัว, คอร์สที่สมัคร, ประสบการณ์, แรงจูงใจ, ค่าใช้จ่าย}
+- **เพิ่มได้:** ส่ง email ยืนยันอัตโนมัติ, จำกัดที่นั่งต่อคอร์ส
+
+### 7.7 Case 7: ระบบสต็อกสังฆทาน / วัสดุประจำวัด
+- **Output:** รายการของคงเหลือ, แจ้งเตือนของใกล้หมด, ประวัติรับ-เบิก
+- **Process:** ของรับเข้า - ของเบิกออก = คงเหลือ
+- **Input:** ฟอร์มรับของเข้า + ฟอร์มเบิกของออก + ฟอร์มทิ้งของหมดอายุ
+- **เพิ่มได้:** QR code/Barcode สแกนของแต่ละชนิด, แจ้งเตือนผ่าน LINE
+
+### 7.8 Case 8: ระบบเช็คชื่อนักเรียน + ติดตามผลการเรียน
+- **Output:** % การมาเรียนของแต่ละคน, แนวโน้มคะแนนรายวิชา, รายชื่อนักเรียนที่ต้องช่วยเหลือ
 - **Process:** count present/total per student, average คะแนนต่อรายวิชา
-- **Input:** เช็คชื่อรายวัน + บันทึกคะแนน
-- **Tech:** React + Supabase, optional Google Sheets sync
+- **Input:** เช็คชื่อรายวันโดยครู + บันทึกคะแนนหลังสอบ
+- **เพิ่มได้:** ส่งสรุปให้ผู้ปกครองรายเดือน, sync กับ Google Sheets
 
-### 7.4 Case 4: งานร้านค้า — สต็อก + ยอดขาย
-- **Output:** สต็อกคงเหลือ, สินค้าขายดี, สรุปยอดวัน/เดือน
-- **Process:** สต็อกเริ่ม - ขายไป, sum by product, by date
-- **Input:** บันทึกการขาย + การรับของเข้า
-- **Tech:** React + Supabase + Barcode scanner (optional)
+### 7.9 Case 9: ตารางนิมนต์พระ / กิจวัตรประจำวัน
+- **Output:** ตารางสัปดาห์แสดงพระแต่ละรูปไปงานไหน, สรุปจำนวนงานต่อพระต่อเดือน
+- **Process:** group งาน by date + by พระ, แสดงเป็น calendar view
+- **Input:** ฟอร์มลงงาน {วันที่, เวลา, สถานที่, ประเภทงาน (สวด/แสดงธรรม/บิณฑบาต), พระที่ไป}
+- **เพิ่มได้:** ส่ง LINE แจ้งเตือนล่วงหน้า 1 วัน
 
-> 💡 **สังเกต:** ทั้ง 4 case ใช้ Pattern เดียวกัน → **Form + DB + Dashboard** → AI สร้างได้เร็วถ้า brief ถูก
+### 7.10 Case 10: คลังบทเทศน์ / ธรรมะออนไลน์
+- **Output:** หน้ารวมบทเทศน์ที่ค้นหาได้, แยกตามหัวข้อ/ผู้แสดงธรรม, สถิติยอดเข้าชม
+- **Process:** full-text search + filter by tags + count views
+- **Input:** ฟอร์มเพิ่มบทเทศน์ {ชื่อเรื่อง, ผู้แสดง, วันที่, หัวข้อ (tag), ไฟล์เสียง/วิดีโอ/บทถอด}
+- **เพิ่มได้:** ใส่ AI ตอบคำถามจากบทเทศน์ (RAG — เรียนใน S5!)
+
+---
+
+> 💡 **สังเกต:** ทั้ง 10 case ใช้ Pattern เดียวกัน → **Form + Database + Dashboard** — เปลี่ยนแค่ฟิลด์ใน Form และวิธีคำนวณใน Dashboard เท่านั้น
+>
+> 🎯 **นี่คือพลังของ AI-First:** เมื่อรู้ Pattern แล้ว → สั่ง AI ทำเคสไหนก็ได้ภายใน 1-2 ชั่วโมง
 
 ---
 
