@@ -370,10 +370,6 @@ function App() {
                     <span className="text-secondary-purple mt-0.5">{'>'}</span>
                     <p className="text-[#e3e2e2]"><span className="text-primary-cyan">LINE OA + Webhook + LIFF</span> — เชื่อมเว็บกับ LINE สำหรับงานคนไทย</p>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <span className="text-secondary-purple mt-0.5">{'>'}</span>
-                    <p className="text-[#e3e2e2]">รู้จัก <span className="text-primary-cyan">RAG</span> + เส้นทางศึกษาต่อเองด้วย NotebookLM / Claude Projects</p>
-                  </div>
                 </div>
                 <div className="mt-8">
                   <a

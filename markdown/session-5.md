@@ -3,7 +3,7 @@
 
 > **ระยะเวลา:** 2 ชั่วโมง 45 นาที
 > **กลุ่มเป้าหมาย:** ผู้เรียนที่ผ่าน Session 1-4 มาแล้ว
-> **เป้าหมายหลักเมื่อจบคาบ:** เข้าใจหลักการ **API** + **JSON**, ดึงข้อมูลจากบริการภายนอกมาใช้ในเว็บได้, รู้จัก **Google APIs** (Maps / Calendar / Sheets) ที่ใช้บ่อยที่สุดในการทำงานจริง, เรียกใช้ **LLM API** (Claude/GPT) เพื่อใส่ AI ลงในเว็บของเราเอง, และ **รู้จัก RAG พอเป็นไอเดีย** + รู้แหล่งศึกษาต่อ
+> **เป้าหมายหลักเมื่อจบคาบ:** เข้าใจหลักการ **API** + **JSON**, ดึงข้อมูลจากบริการภายนอกมาใช้ในเว็บได้, รู้จัก **Google APIs** (Maps / Calendar / Sheets) ที่ใช้บ่อยที่สุดในการทำงานจริง, เรียกใช้ **LLM API** (Claude/GPT) เพื่อใส่ AI ลงในเว็บของเราเอง, และเชื่อม **LINE OA + Webhook** กับเว็บแอปได้
 
 > 💡 **แนวคิดหลัก:** จากที่เคย "ใช้ AI" → คาบนี้ "สร้างของที่มี AI อยู่ในนั้น" สำหรับให้คนอื่นใช้
 
@@ -20,7 +20,7 @@
 | 5 | 1:20 – 1:30 | *พักเบรก* |
 | 6 | 1:30 – 2:00 | **🌟 Google APIs** — Maps, Calendar, Sheets, Drive |
 | 7 | 2:00 – 2:30 | **🌟 LINE OA + Webhook** — เชื่อม LINE กับ Web App ของเรา |
-| 8 | 2:30 – 2:45 | **RAG พอรู้จัก** + สรุป + การบ้าน |
+| 8 | 2:30 – 2:45 | สรุปบทเรียน & การบ้าน |
 
 ---
 
@@ -40,7 +40,7 @@
 
 ### 1.3 คาบนี้เปิดประตูใหม่ 2 บาน
 1. **API** — เชื่อมเว็บของเรากับข้อมูลโลกภายนอก
-2. **LLM API + RAG** — ใส่ AI Chatbot ที่ฉลาดเรื่องของเราไว้ในเว็บ
+2. **LLM API + LINE OA** — ใส่ AI ในเว็บ + เชื่อม LINE ให้สื่อสารกับผู้ใช้คนไทย
 
 ---
 
@@ -385,54 +385,28 @@ User           LINE              Our Backend         Our Web/DB
 
 ---
 
-## 📚 ส่วนที่ 8 — RAG พอรู้จัก + สรุป + การบ้าน
+## 📋 ส่วนที่ 8 — สรุปบทเรียน & การบ้าน
 *(15 นาที)*
 
-### 8.1 RAG พอรู้จัก (5 นาที)
-**RAG = Retrieval-Augmented Generation** = "หา + ตอบ" — ให้ AI ตอบจากเอกสารของเรา
-
-**กลไกย่อ:** เอกสาร → หาส่วนที่เกี่ยวข้อง → ส่งให้ LLM → ตอบโดยอ้างอิงเอกสาร (ไม่มั่ว)
-
-**ทำไมไม่สอนสร้างเองในคาบนี้?**
-- ซับซ้อน (Vector DB, Embeddings, Chunking)
-- ใช้เวลาเยอะ
-- **Tool สำเร็จรูปดีพอ** สำหรับ 80% ของ use case
-
-**🛠️ ลองใช้ผ่าน Tool no-code (ฟรี):**
-| Tool | ฟรี? | เหมาะกับ |
-|---|---|---|
-| **NotebookLM** (Google) | ✅ ฟรี | อัปโหลดไฟล์หลายๆ ตัว → ถามได้ + สรุปได้ + ทำ Podcast |
-| **Claude Projects** | ต้อง Plus | Knowledge base ผูกกับ Project |
-| **Custom GPTs** | ต้อง Plus | Share ให้คนอื่นใช้ได้ |
-| **Gemini Gems** | ฟรีบางส่วน | บน Google ecosystem |
-
-**🔗 ถ้าอยากศึกษาต่อ (Self-study path):**
-- **Keywords:** `RAG`, `vector database`, `embeddings`, `LangChain`, `LlamaIndex`
-- **Cookbook:** [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook), [OpenAI Cookbook](https://cookbook.openai.com)
-- **Framework:** LangChain, LlamaIndex (มี tutorial RAG จาก basic ถึง advanced)
-- **Vector DB:** Supabase Vector (pgvector), Pinecone, Chroma
-- **เวลาต้องลงทุน:** 20-40 ชั่วโมง กระจาย 1-2 เดือน
-
-### 8.2 สิ่งที่ได้เรียนวันนี้
+### 8.1 สิ่งที่ได้เรียนวันนี้
 - **API + JSON** = เมนูให้โปรแกรมสั่งข้อมูลจากบริการอื่น
 - **fetch()** = คำสั่ง JS เรียก API (AI เขียนให้)
 - **LLM API** (Claude/GPT) = ใส่ AI ลงในเว็บของเรา + System Prompt กำหนดบุคลิก
 - **Google APIs** = Maps / Calendar / Sheets / Drive (ใช้บ่อยที่สุดในงานจริง)
 - **LINE OA + Webhook + LIFF** = ช่องทางสื่อสารกับผู้ใช้ที่เหมาะกับคนไทย
-- **RAG** = รู้จักไว้, ใช้ Tool สำเร็จรูปก่อน (NotebookLM, Claude Projects)
 
-### 8.3 ภารกิจในห้องเรียน
+### 8.2 ภารกิจในห้องเรียน
 - [ ] สมัคร API Key: OpenWeatherMap + Anthropic (Claude) + Google Cloud
 - [ ] สร้าง Weather App (Workshop 1)
 - [ ] สร้าง Mini Chatbot ใช้ LLM API (ส่วน 4.5)
 - [ ] เลือก 1 Google API mini-walkthrough (Maps / Calendar / Sheets) → ทำในโปรเจกต์ของตัวเอง
 - [ ] สร้าง LINE OA + Webhook ที่ตอบ keyword ได้ (ส่วน 7.7)
-- [ ] ลอง **NotebookLM** อัปโหลดเอกสารของตัวเอง → ถามคำถาม
+- [ ] Deploy ขึ้น Vercel (ระวัง! อย่า commit API Key)
 
-### 8.4 การบ้าน
+### 8.3 การบ้าน
 1. **เลือก 1 ช่องทาง** ที่อยากเชื่อมกับเว็บแอปของวัด/โรงเรียน — Google Sheets, LINE OA, หรือ Google Calendar
 2. **คิด Workflow จริง:** เช่น "user สมัครงานบุญผ่าน LINE OA → ข้อมูลไป Sheet → ส่งการ์ดยืนยันกลับใน LINE"
-3. **ลอง NotebookLM** อัปโหลด PDF/Markdown ของตัวเอง → ดูว่ามันตอบถูกแค่ไหน
+3. **ลอง integrate เพิ่ม:** เช่น เพิ่ม Google Maps แสดงที่ตั้งวัด, หรือเพิ่ม keyword ที่ LINE OA ตอบ
 4. **เตรียมตัวคาบหน้า (S6 - Final Project):** เลือกหัวข้อโปรเจกต์ที่จะทำ + ร่าง `requirements.md` มา
 
 ---
@@ -440,5 +414,5 @@ User           LINE              Our Backend         Our Web/DB
 ## 💡 เทคนิคสำหรับผู้สอน (Instructor Notes)
 1. **ความปลอดภัย API Key เป็นเรื่องสำคัญ** — สาธิตว่าถ้า commit เข้า Git ก็จะมีคนใช้ฟรีจน credit หมด → ต้อง `.env` + `.gitignore` ทุกครั้ง
 2. **ถ้า CORS error ในห้อง** ให้ AI แก้ด้วย serverless function (เช่น Vercel Functions) หรือใช้ proxy
-3. **อย่าจมกับ RAG ทฤษฎี** — เป้าหมายของ S5 คือให้ผู้เรียน "ใช้" RAG ผ่าน service สำเร็จรูปได้ ไม่ใช่ implement ตั้งแต่ศูนย์
-4. **ขายไอเดียว่า "AI ที่ฉลาดเรื่องของเรา = สินทรัพย์"** — ทุกร้าน/ทุกบริษัทจะต้องมีในอนาคต
+3. **ขายไอเดียว่า "AI + ช่องทางที่คนใช้จริง = สินทรัพย์"** — เว็บที่เชื่อม Google Sheets + LINE OA ใช้ได้ทันทีในวัด/โรงเรียน
+4. **LINE OA setup กินเวลา** — ให้นิสิตทำตั้งแต่ต้นชั่วโมงพักเบรก เพื่อให้รอ verify ได้ทันในชั่วโมง
